@@ -1,24 +1,10 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import { Building2, Factory, Ship, Users, Globe, ShoppingCart, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Building2, Factory, Ship, Users, Globe, ShoppingCart } from 'lucide-react';
 
 export default function WhoWeServe() {
   const sliderRef = useRef<HTMLDivElement>(null);
-  
-  const handleScroll = (direction: 'left' | 'right') => {
-    if (sliderRef.current) {
-      const scrollAmount = 620; // Card width + gap
-      const scrollPosition = direction === 'left' 
-        ? sliderRef.current.scrollLeft - scrollAmount
-        : sliderRef.current.scrollLeft + scrollAmount;
-      
-      sliderRef.current.scrollTo({
-        left: scrollPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
 
 const customers = [
   {
@@ -130,37 +116,6 @@ const customers = [
             ))}
           </div>
 
-          {/* Navigation Buttons */}
-          <button
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10"
-            onClick={() => handleScroll('left')}
-          >
-            <div className="relative w-12 h-12">
-              <img
-                src="/Brand-Motif-Container-Left-Green-Outline.svg"
-                alt="Previous"
-                className="absolute inset-0 w-full h-full"
-              />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <ChevronLeft className="w-6 h-6 text-[#007628]" />
-              </div>
-            </div>
-          </button>
-          <button
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10"
-            onClick={() => handleScroll('right')}
-          >
-            <div className="relative w-12 h-12">
-              <img
-                src="/Brand-Motif-Container-Right-Green-Outline.svg"
-                alt="Next"
-                className="absolute inset-0 w-full h-full"
-              />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <ChevronRight className="w-6 h-6 text-[#007628]" />
-              </div>
-            </div>
-          </button>
         </div>
 
         {/* CTA */}
