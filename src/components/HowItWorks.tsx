@@ -120,7 +120,7 @@ export default function HowItWorks() {
           {/* Cards Container */}
           <div 
             ref={sliderRef}
-            className="flex gap-0 pl-4 pr-4" 
+            className="flex gap-0 pl-8 pr-4" 
             style={{ minHeight: '450px' }}
           >
           {steps.map((step, index) => (
