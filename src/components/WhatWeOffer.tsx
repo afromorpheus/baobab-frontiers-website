@@ -135,9 +135,9 @@ export default function WhatWeOffer() {
           </p>
         </motion.div>
 
-        {/* Interactive Two-Column Layout - Centered */}
+        {/* Interactive Three-Column Layout - Centered */}
         <div className="flex justify-center">
-          <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] items-center max-w-5xl w-full" style={{ columnGap: '8px' }}>
+          <div className="grid grid-cols-1 lg:grid-cols-[auto_auto_1fr] items-center max-w-6xl w-full gap-8">
 
           {/* Left Column - Interactive Features List */}
           <div className="flex flex-col justify-center w-80">
@@ -209,12 +209,34 @@ export default function WhatWeOffer() {
           </motion.div>
           </div>
 
+          {/* Center Column - Caption Text */}
+          <div className="hidden lg:flex flex-col justify-center w-64">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="text-center py-4"
+            >
+              <motion.p
+                key={activeFeature}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+                className="text-[#007628] font-nunito-light leading-tight text-lg"
+                style={{ willChange: 'opacity' }}
+              >
+                {features[activeFeature].description}
+              </motion.p>
+            </motion.div>
+          </div>
+
           {/* Right Column - Dynamic Image Display */}
           <div className="w-full flex flex-col justify-center">
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
               viewport={{ once: true }}
               className="w-full"
             >
@@ -285,8 +307,8 @@ export default function WhatWeOffer() {
               </div>
             </div>
 
-            {/* Caption - Text Only */}
-            <div className="mt-3 relative mx-1">
+            {/* Mobile Caption - Text Only (hidden on desktop) */}
+            <div className="lg:hidden mt-3 relative mx-1">
               <div className="text-center py-2 min-h-[2rem] flex items-center justify-center">
                 <motion.p
                   key={activeFeature}
