@@ -56,10 +56,10 @@ export default function Header() {
             {/* WhatsApp Button - Hidden on mobile */}
             <motion.button 
               className="hidden sm:flex items-center space-x-2 px-4 py-2 bg-[#007628] text-white rounded-full hover:bg-[#756E33] transition-colors"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
               <MessageCircle size={16} />
               <span className="text-sm font-nunito-light">WHATSAPP US</span>
             </motion.button>

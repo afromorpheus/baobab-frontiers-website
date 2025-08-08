@@ -127,12 +127,10 @@ export default function WhatWeOffer() {
             viewport={{ once: true }}
             className="mx-auto w-24 h-36 flex items-center justify-center mb-4"
           >
-            <Image
-              src="/Brand-Motif-Asanka-Coloured.svg"
+            <img
+              src="/Brand-Motif-Asanka-New.svg"
               alt="Asanka Brand Motif"
-              width={96}
-              height={144}
-              className="w-24 h-36"
+              className="h-36 w-auto"
             />
           </motion.div>
 
