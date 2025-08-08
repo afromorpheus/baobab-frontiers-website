@@ -19,21 +19,21 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="space-y-4"
+          className="space-y-2 md:space-y-4"
         >
           {/* Central Icon - High Res Corn */}
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mx-auto w-6 h-6 md:w-52 md:h-52 flex items-center justify-center"
+            className="mx-auto w-6 h-24 md:w-52 md:h-52 flex items-center justify-center"
           >
             <Image
               src="/HiRes Corn.svg"
               alt="High Resolution Corn"
               width={208}
               height={208}
-              className="w-6 h-6 md:w-52 md:h-52 drop-shadow-2xl"
+              className="w-6 h-24 md:w-52 md:h-52 drop-shadow-2xl"
               priority
             />
           </motion.div>
@@ -43,7 +43,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-2xl md:text-6xl font-kannada-bold text-[#007628] leading-tight text-center"
+            className="text-[28px] md:text-6xl font-kannada-bold text-[#007628] leading-tight text-center"
           >
             ALL YEAR MAIZE SUPPLY
           </motion.h1>
@@ -53,7 +53,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="w-80 md:w-auto md:max-w-[calc(100%-128px)] mx-auto text-sm md:text-xl text-[#525252] leading-relaxed font-nunito-light -mt-0.5"
+            className="w-80 md:w-auto md:max-w-[calc(100%-128px)] mx-auto text-[20px] md:text-xl text-[#525252] leading-relaxed font-nunito-light -mt-0.5"
           >
             We connect trusted Ghanaian maize producers, aggregators and importers with feed producers, processors, and exporters who need consistent, high-quality yellow maize.
           </motion.p>
