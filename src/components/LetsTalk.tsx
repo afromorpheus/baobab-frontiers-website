@@ -196,6 +196,17 @@ export default function LetsTalk() {
               </div>
               
               <div>
+                <label className="block text-sm font-nunito-light text-[#525252] mb-2">MAIZE TYPE</label>
+                <select 
+                  className="w-full px-4 py-3 border border-[#D09229]/30 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#007628] focus:border-transparent font-nunito-light bg-white"
+                >
+                  <option value="">Select maize type</option>
+                  <option value="yellow">Yellow Maize</option>
+                  <option value="white">White Maize</option>
+                </select>
+              </div>
+              
+              <div>
                 <label className="block text-sm font-nunito-light text-[#525252] mb-2">MESSAGE</label>
                 <textarea 
                   rows={4}

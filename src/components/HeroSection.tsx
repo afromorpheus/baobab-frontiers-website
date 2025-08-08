@@ -65,8 +65,8 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
           >
-            <button className="group flex items-center space-x-2 px-8 py-2 md:py-4 bg-[#F3EE33] text-[#222222] rounded-full hover:bg-[#D09229] transition-all duration-300 font-kannada-regular text-base md:text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-              <span>REQUEST A QUOTE</span>
+            <button className="group flex items-center space-x-2 px-8 py-2 md:py-4 bg-[#007628] text-white rounded-full hover:bg-[#005d1f] transition-all duration-300 font-kannada-regular text-base md:text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+              <span>BUY MAIZE</span>
               <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </button>
             
