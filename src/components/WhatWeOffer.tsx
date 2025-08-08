@@ -166,6 +166,7 @@ export default function WhatWeOffer() {
                 {/* Brand Motif Icon Container */}
                 <div className="relative flex-shrink-0 w-10 h-8 md:w-20 md:h-16">
                   <div className="absolute inset-0 flex items-center justify-center">
+                    {/* Desktop version - conditional highlighting */}
                     <img
                       src={
                         activeFeature === index
@@ -177,26 +178,43 @@ export default function WhatWeOffer() {
                       alt="Brand motif"
                       className="w-full h-full object-contain transition-all duration-300 md:block hidden"
                     />
-                    {/* Mobile version - always show outline */}
+                    {/* Mobile version - conditional highlighting */}
                     <img
-                      src={feature.motifOutline}
+                      src={
+                        activeFeature === index
+                          ? feature.motifFilled
+                          : feature.motifOutline
+                      }
                       alt="Brand motif"
                       className="w-full h-full object-contain transition-all duration-300 block md:hidden"
                     />
                   </div>
                   <div className="absolute inset-0 flex items-center justify-center">
+                    {/* Desktop version - conditional highlighting */}
                     <feature.icon
                       size={32}
-                      className={`${activeFeature === index ? 'md:text-white text-[#007628]' : feature.iconColor} transition-colors duration-300 scale-[0.44] md:scale-100`}
+                      className={`${activeFeature === index ? 'md:text-white' : feature.iconColor} transition-colors duration-300 scale-[0.44] md:scale-100 md:block hidden`}
+                    />
+                    {/* Mobile version - conditional highlighting */}
+                    <feature.icon
+                      size={32}
+                      className={`${activeFeature === index ? 'text-white' : feature.iconColor} transition-colors duration-300 scale-[0.44] md:scale-100 block md:hidden`}
                     />
                   </div>
                 </div>
 
                 {/* Feature Text - Centered */}
                 <div className="text-center">
+                  {/* Desktop version - conditional highlighting */}
                   <h3 className={`text-xs md:text-lg leading-tight transition-colors duration-300 ${
                     activeFeature === index ? 'md:text-[#007628] md:font-kannada-bold text-[#222222] font-kannada-regular' : 'text-[#222222] font-kannada-regular'
-                  }`}>
+                  } md:block hidden`}>
+                    {feature.title}
+                  </h3>
+                  {/* Mobile version - conditional highlighting */}
+                  <h3 className={`text-xs md:text-lg leading-tight transition-colors duration-300 ${
+                    activeFeature === index ? 'text-[#007628] font-kannada-bold' : 'text-[#222222] font-kannada-regular'
+                  } block md:hidden`}>
                     {feature.title}
                   </h3>
                 </div>
