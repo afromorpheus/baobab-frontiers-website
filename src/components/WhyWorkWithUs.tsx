@@ -119,27 +119,6 @@ export default function WhyWorkWithUs() {
             </motion.div>
           )}
 
-          {/* Right Scroll Indicator */}
-          {showScrollIndicators && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6 }}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10"
-            >
-              <div className="flex flex-col items-center space-y-2">
-                <span className="text-sm text-[#525252] font-nunito-light uppercase">Scroll</span>
-                <div className="w-6 h-10 border-2 border-[#525252] rounded-full flex justify-center">
-                  <motion.div
-                    animate={{ x: [2, -2, 2] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="w-1 h-3 bg-[#007628] rounded-full mt-2"
-                  ></motion.div>
-                </div>
-              </div>
-            </motion.div>
-          )}
-
           {/* Slider Container */}
           <div 
             ref={sliderRef}
@@ -198,6 +177,27 @@ export default function WhyWorkWithUs() {
               </motion.div>
             ))}
           </div>
+
+          {/* Right Scroll Indicator - Outside the carousel */}
+          {showScrollIndicators && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6 }}
+              className="absolute -right-8 top-1/2 transform -translate-y-1/2 z-10"
+            >
+              <div className="flex flex-col items-center space-y-2">
+                <span className="text-sm text-[#525252] font-nunito-light uppercase">Scroll</span>
+                <div className="w-6 h-10 border-2 border-[#525252] rounded-full flex justify-center">
+                  <motion.div
+                    animate={{ x: [2, -2, 2] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                    className="w-1 h-3 bg-[#007628] rounded-full mt-2"
+                  ></motion.div>
+                </div>
+              </div>
+            </motion.div>
+          )}
         </div>
 
         {/* Call to Action */}
