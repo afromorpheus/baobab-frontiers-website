@@ -63,7 +63,7 @@ const customers = [
         </div>
 
         {/* Cards Container - Full Width */}
-        <div className="relative w-screen -mx-4">
+        <div className="relative w-full">
           {/* Slider Container */}
           <div 
             ref={sliderRef}
