@@ -238,7 +238,7 @@ export default function WhatWeOffer() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
               viewport={{ once: true }}
-              className="grid grid-cols-3 md:flex md:flex-wrap justify-center gap-1 md:gap-[5px]"
+              className="flex flex-wrap md:flex-wrap justify-center gap-1 md:gap-[5px]"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
@@ -252,14 +252,14 @@ export default function WhatWeOffer() {
                 onClick={() => handleFeatureSelect(index)}
                 onMouseEnter={() => setHoveredFeature(index)}
                 onMouseLeave={() => setHoveredFeature(-1)}
-                className={`flex flex-col items-center gap-1 md:gap-3 p-3 md:p-4 cursor-pointer transition-all duration-300 w-full md:w-auto md:min-w-[200px] ${
+                className={`flex flex-col items-center gap-1 md:gap-3 p-2 md:p-4 cursor-pointer transition-all duration-300 w-auto md:w-auto md:min-w-[200px] ${
                   activeFeature === index
-                    ? 'bg-[#F3EE33]/20 rounded-lg'
-                    : 'hover:bg-[#F3EE33]/10 rounded-lg'
+                    ? 'md:bg-[#F3EE33]/20 md:rounded-lg'
+                    : 'md:hover:bg-[#F3EE33]/10 md:rounded-lg'
                 }`}
               >
                 {/* Brand Motif Icon Container */}
-                <div className="relative flex-shrink-0 w-12 h-9 md:w-20 md:h-16">
+                <div className="relative flex-shrink-0 w-10 h-8 md:w-20 md:h-16">
                   <div className="absolute inset-0 flex items-center justify-center">
                     <img
                       src={
@@ -275,7 +275,7 @@ export default function WhatWeOffer() {
                   </div>
                   <div className="absolute inset-0 flex items-center justify-center">
                     <feature.icon
-                      size={16}
+                      size={14}
                       className={`${activeFeature === index ? 'text-white' : feature.iconColor} transition-colors duration-300`}
                     />
                   </div>
