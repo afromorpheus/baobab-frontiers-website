@@ -19,7 +19,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="space-y-2 md:space-y-4"
+          className="space-y-2 md:space-y-4 -mt-32 md:mt-0"
         >
           {/* Central Icon - High Res Corn */}
           <motion.div
