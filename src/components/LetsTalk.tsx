@@ -78,7 +78,7 @@ export default function LetsTalk() {
         </motion.div>
 
         {/* Contact Methods Grid */}
-        <div className="grid grid-cols-2 gap-12 mb-12">
+        <div className="flex overflow-x-auto scrollbar-hide gap-0 py-10 px-4 mb-12">
           {contactMethods.map((method, index) => (
             <motion.div
               key={index}
@@ -86,10 +86,11 @@ export default function LetsTalk() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group relative"
+              className="group relative flex-shrink-0"
+              style={{ width: '300px', marginRight: index < contactMethods.length - 1 ? '-80px' : '0' }}
             >
               {/* Brand Motif Background */}
-              <div className="relative w-full h-96">
+              <div className="relative w-full h-96 md:h-80">
                 {/* Yellow Brand Motif Background */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <img
@@ -101,7 +102,7 @@ export default function LetsTalk() {
 
                 {/* Content Container - Centered within motif */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center max-w-sm px-8">
+                  <div className="text-center max-w-sm md:max-w-xs px-8 md:px-4">
                     {/* Icon Container - Left Side */}
                     <div className="flex-shrink-0">
                       <div 
@@ -113,17 +114,17 @@ export default function LetsTalk() {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-lg font-kannada-regular text-[#222222] mb-2">
+                    <h3 className="text-lg md:text-base font-kannada-regular text-[#222222] mb-2">
                       {method.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-sm text-[#525252] font-nunito-light mb-3">
+                    <p className="text-sm md:text-xs text-[#525252] font-nunito-light mb-3">
                       {method.description}
                     </p>
 
                     {/* Contact Info */}
-                    <p className="text-white font-nunito-light font-medium whitespace-pre-line">
+                    <p className="text-white font-nunito-light font-medium whitespace-pre-line text-sm md:text-xs">
                       {method.contact}
                     </p>
                   </div>
