@@ -88,7 +88,7 @@ export default function LetsTalk() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="group relative flex-shrink-0"
-                style={{ width: '300px', marginRight: index < contactMethods.length - 1 ? '-120px' : '0' }}
+                style={{ width: '300px', marginRight: index < contactMethods.length - 1 ? '-75px' : '0' }}
               >
                 {/* Brand Motif Background */}
                 <div className="relative w-full h-96 md:h-80">
