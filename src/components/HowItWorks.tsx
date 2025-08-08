@@ -81,13 +81,13 @@ export default function HowItWorks() {
         <div className="relative w-full overflow-x-auto scrollbar-hide py-10">
           {/* Cards Container */}
           <div className="flex gap-0 pl-4 pr-4" style={{ minHeight: '450px' }}>
-            {steps.map((step, index) => (
-              <motion.div
-                key={index}
+          {steps.map((step, index) => (
+            <motion.div
+              key={index}
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
+              viewport={{ once: true }}
                 className="flex-shrink-0 relative"
                 style={{ width: '320px', marginRight: '-40px' }}
               >
@@ -101,7 +101,7 @@ export default function HowItWorks() {
                   
                   {/* Content Container */}
                   <div className="absolute inset-0 flex flex-col justify-start items-center pt-[52px] px-6 z-20">
-                    {/* Icon */}
+                {/* Icon */}
                     <div className="mb-4">
                       <div 
                         className="w-12 h-12 bg-lime-400 rounded-lg flex items-center justify-center"
@@ -109,22 +109,22 @@ export default function HowItWorks() {
                       >
                         <step.icon className="w-6 h-6 text-[#007628]" />
                       </div>
-                    </div>
-                    
-                    {/* Title */}
+                </div>
+
+                {/* Title */}
                     <h3 
                       className="text-lg font-kannada-regular text-lime-400 mb-0.5 text-center z-20"
                       dangerouslySetInnerHTML={{ __html: step.title }}
                     />
-                    
-                    {/* Description */}
+
+                {/* Description */}
                     <p className="text-white text-center leading-relaxed font-nunito-light z-20">
-                      {step.description}
-                    </p>
-                  </div>
+                  {step.description}
+                </p>
+              </div>
                 </div>
-              </motion.div>
-            ))}
+            </motion.div>
+          ))}
           </div>
         </div>
 

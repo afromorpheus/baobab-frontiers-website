@@ -72,7 +72,7 @@ const customers = [
           >
           {customers.map((customer, index) => (
               <div
-                key={index}
+              key={index}
                 className="flex-shrink-0 group"
                 style={{ width: '544px', marginRight: '-160px' }}
               >
@@ -98,16 +98,16 @@ const customers = [
                         >
                           <customer.icon size={32} className="text-[#2D2D2D]" />
                         </div>
-                      </div>
+                </div>
 
                       {/* Text Content - Right Side */}
                       <div className="flex-1">
                         <h3 className="text-xl font-kannada-regular group-hover:font-kannada-bold text-[#222222] mb-2 leading-tight whitespace-pre-line transition-all duration-300">
-                          {customer.title}
-                        </h3>
-                        <p className="text-[#525252] leading-relaxed font-nunito-light">
-                          {customer.description}
-                        </p>
+                  {customer.title}
+                </h3>
+                <p className="text-[#525252] leading-relaxed font-nunito-light">
+                  {customer.description}
+                </p>
                       </div>
                     </div>
                   </div>

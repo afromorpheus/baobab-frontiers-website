@@ -285,31 +285,21 @@ export default function WhatWeOffer() {
               </div>
             </div>
 
-            {/* Caption - Brand Motif Shape - Fixed Height Container */}
+            {/* Caption - Text Only */}
             <div className="mt-3 relative mx-1">
-              <div className="relative w-full h-20" style={{ willChange: 'transform' }}>
-                <img
-                  src="/Brand-Motif-Banner-White-With-Shadow.svg"
-                  alt="Caption background"
-                  className="absolute inset-0 w-full h-full object-contain"
-                  style={{ transform: 'scaleX(1.4)' }}
-                />
-                <div className="absolute inset-0 flex items-center justify-center py-6" style={{ paddingLeft: '4px', paddingRight: '4px' }}>
-                  <div className="text-center py-2 min-h-[2rem] flex items-center justify-center">
-                    <motion.p
-                      key={activeFeature}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.3 }}
-                      className="text-[#007628] font-nunito-light leading-tight text-base"
-                      style={{ willChange: 'opacity' }}
-                    >
-                      {features[activeFeature].description}
-                    </motion.p>
-                  </div>
-                </div>
+              <div className="text-center py-2 min-h-[2rem] flex items-center justify-center">
+                <motion.p
+                  key={activeFeature}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                  className="text-[#007628] font-nunito-light leading-tight text-base"
+                  style={{ willChange: 'opacity' }}
+                >
+                  {features[activeFeature].description}
+                </motion.p>
               </div>
-              </div>
+            </div>
             </motion.div>
           </div>
           </div>
