@@ -62,12 +62,12 @@ const customers = [
           </p>
         </div>
 
-        {/* Cards Container */}
-        <div className="relative">
+        {/* Cards Container - Full Width */}
+        <div className="relative w-screen -mx-4">
           {/* Slider Container */}
           <div 
             ref={sliderRef}
-            className="flex overflow-x-auto scrollbar-hide gap-0 py-8 pb-12 px-4 -mx-4"
+            className="flex overflow-x-auto scrollbar-hide gap-0 py-8 pb-12 px-4"
             style={{ minHeight: '320px' }}
           >
             {customers.map((customer, index) => (
