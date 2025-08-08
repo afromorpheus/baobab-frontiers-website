@@ -115,17 +115,17 @@ export default function LetsTalk() {
                       </div>
 
                       {/* Title */}
-                      <h3 className="text-[18px] md:text-[16px] font-kannada-regular text-[#222222] mb-2">
+                      <h3 className="text-[20px] md:text-[18px] font-kannada-regular text-[#222222] mb-2">
                         {method.title}
                       </h3>
 
                       {/* Description */}
-                      <p className="text-[15px] md:text-[13px] text-[#525252] font-nunito-light mb-3">
+                      <p className="text-[17px] md:text-[15px] text-[#525252] font-nunito-light mb-3">
                         {method.description}
                       </p>
 
                       {/* Contact Info */}
-                      <p className="text-white font-nunito-light font-medium whitespace-pre-line text-[15px] md:text-[13px]">
+                      <p className="text-white font-nunito-light font-medium whitespace-pre-line text-[17px] md:text-[15px]">
                         {method.contact}
                       </p>
                     </div>
