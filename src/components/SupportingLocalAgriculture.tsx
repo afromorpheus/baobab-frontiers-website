@@ -77,7 +77,7 @@ export default function SupportingLocalAgriculture() {
             <img
               src="/Brand-Motif-Tapoli-Alt.svg"
               alt="Tapoli Brand Motif"
-              className="h-36 w-auto"
+              className="h-24 w-auto"
             />
           </motion.div>
 

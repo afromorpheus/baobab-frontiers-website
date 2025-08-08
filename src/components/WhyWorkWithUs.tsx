@@ -77,7 +77,7 @@ export default function WhyWorkWithUs() {
             <img
               src="/Brand-Motif-Asanka-Alt.svg"
               alt="Asanka Brand Motif"
-              className="h-36 w-auto"
+              className="h-24 w-auto"
             />
           </motion.div>
 

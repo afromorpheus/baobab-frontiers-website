@@ -67,7 +67,7 @@ export default function LetsTalk() {
             <img
               src="/Brand-Motif-Ahoden-Alt.svg"
               alt="Ahoden Brand Motif"
-              className="h-36 w-auto"
+              className="h-24 w-auto"
             />
           </motion.div>
 

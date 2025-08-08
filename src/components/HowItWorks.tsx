@@ -62,7 +62,7 @@ export default function HowItWorks() {
             <img
               src="/Brand-Motif-Ahoden-New.svg"
               alt="Ahoden Brand Motif"
-              className="h-36 w-auto"
+              className="h-24 w-auto"
             />
           </motion.div>
 
