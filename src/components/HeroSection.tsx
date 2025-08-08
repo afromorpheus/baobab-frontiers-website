@@ -19,14 +19,14 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="space-y-8"
+          className="space-y-4"
         >
           {/* Central Icon - High Res Corn */}
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mx-auto w-64 h-64 flex items-center justify-center mb-8"
+            className="mx-auto w-64 h-64 flex items-center justify-center mb-4"
           >
             <Image
               src="/HiRes Corn.svg"
@@ -43,7 +43,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-4xl md:text-6xl font-kannada-bold text-[#007628] leading-tight flex items-center justify-center space-x-4"
+            className="text-4xl md:text-6xl font-kannada-bold text-[#007628] leading-tight flex items-end justify-center space-x-4"
           >
             <span>CONSISTENT MAIZE SUPPLY,</span>
             <motion.div 
@@ -52,8 +52,8 @@ export default function HeroSection() {
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             >
               <Image
-                src="/Brand-Motif-Tapoli-New.svg"
-                alt="Tapoli Brand Motif"
+                src="/Brand-Motif-Tapoli-Alt.svg"
+                alt="Tapoli Alt Brand Motif"
                 width={240}
                 height={160}
                 className="h-24 w-auto"

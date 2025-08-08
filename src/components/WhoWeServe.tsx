@@ -46,7 +46,7 @@ const customers = [
   ];
 
   return (
-    <section id="customer" className="relative w-full bg-white py-24">
+    <section id="customer" className="relative w-full bg-[#D09229]/20 py-12">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="flex flex-col items-center mb-16">
@@ -64,17 +64,21 @@ const customers = [
 
         {/* Cards Container - Full Width */}
         <div className="relative w-full">
+          {/* Gradient Fade Effects - Matching Background Color */}
+          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#D09229]/20 to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#D09229]/20 to-transparent z-10 pointer-events-none"></div>
+          
           {/* Slider Container */}
           <div 
             ref={sliderRef}
-            className="flex overflow-x-auto scrollbar-hide gap-0 py-8 pb-12 px-4"
-            style={{ minHeight: '320px' }}
+            className="flex overflow-x-auto scrollbar-hide gap-0 py-12 pb-16 px-4"
+            style={{ minHeight: '360px' }}
           >
-            {customers.map((customer, index) => (
+          {customers.map((customer, index) => (
               <div
                 key={index}
                 className="flex-shrink-0 group"
-                style={{ width: '600px', marginRight: '-120px' }}
+                style={{ width: '544px', marginRight: '-160px' }}
               >
                 {/* Card Container */}
                 <div className="relative w-full h-72">
@@ -83,7 +87,7 @@ const customers = [
                     <img
                       src="/Brand-Motif-Card-Yellow-Organic.svg"
                       alt="Card background motif"
-                      className="w-full h-full object-contain scale-125"
+                      className="w-full h-full object-contain scale-110"
                     />
                   </div>
 
@@ -96,13 +100,13 @@ const customers = [
                           className="w-16 h-16 bg-white rounded-lg flex items-center justify-center"
                           style={{ boxShadow: 'inset 0 2px 6px rgba(0, 0, 0, 0.25)' }}
                         >
-                          <customer.icon size={32} className={customer.iconColor} />
+                  <customer.icon size={32} className={customer.iconColor} />
                         </div>
-                      </div>
+                </div>
 
                       {/* Text Content - Right Side */}
                       <div className="flex-1">
-                        <h3 className="text-xl font-kannada-regular text-[#222222] mb-4 leading-tight whitespace-pre-line">
+                        <h3 className="text-xl font-kannada-regular text-[#222222] mb-2 leading-tight whitespace-pre-line">
                           {customer.title}
                         </h3>
                         <p className="text-[#525252] leading-relaxed font-nunito-light">
@@ -113,7 +117,7 @@ const customers = [
                   </div>
                 </div>
               </div>
-            ))}
+          ))}
           </div>
 
         </div>

@@ -128,9 +128,9 @@ export default function WhatWeOffer() {
             className="mx-auto mb-4 flex justify-center"
           >
             <img
-              src="/Brand-Motif-Asanka-New.svg"
+              src="/Brand-Motif-Asanka-Alt.svg"
               alt="Asanka Brand Motif"
-              className="h-24 w-auto"
+              className="h-24 w-auto opacity-60"
             />
           </motion.div>
 

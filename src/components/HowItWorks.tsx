@@ -42,7 +42,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-20 bg-white">
+    <section id="how-it-works" className="py-20 bg-[#D9EAD3]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -78,47 +78,197 @@ export default function HowItWorks() {
           </p>
         </motion.div>
 
-        {/* Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {steps.map((step, index) => (
+        {/* Horizontal Slider Container */}
+        <div className="relative w-full overflow-x-auto scrollbar-hide py-16">
+          {/* Cards Container */}
+          <div className="flex gap-2 pl-4 pr-4" style={{ minHeight: '450px' }}>
+            {/* Spacer to prevent first card truncation */}
+            <div className="flex-shrink-0 w-8"></div>
+            
+            {/* Step 1: SOURCING & VETTING */}
             <motion.div
-              key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="group relative"
+              className="group relative flex-shrink-0"
+              style={{ width: '320px' }}
             >
-              {/* Step Number */}
-              <div className="absolute -top-4 -left-4 w-8 h-8 bg-[#007628] text-white rounded-2xl flex items-center justify-center font-kannada-bold text-sm">
-                {index + 1}
-              </div>
-
-              <div className={`p-8 rounded-3xl ${step.color} h-full card-hover border border-gray-100`}>
-                {/* Icon */}
-                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-4 shadow-lg group-hover:shadow-xl transition-shadow">
-                  <step.icon size={32} className={step.iconColor} />
+              <div className="relative w-full h-80">
+                {/* Yellow Brand Motif Background */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <img
+                    src="/Brand-Motif-Card-Yellow-Organic.svg"
+                    alt="Card background motif"
+                    className="w-full h-full object-contain scale-125"
+                  />
                 </div>
 
-                {/* Title */}
-                <h3 className="text-xl font-kannada-regular text-[#222222] mb-4 leading-tight">
-                  {step.title}
-                </h3>
+                {/* Content Container - Centered within motif */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="flex items-center gap-2 max-w-xs">
+                    {/* Icon Container - Left Side */}
+                    <div className="flex-shrink-0">
+                      <div 
+                        className="w-16 h-16 bg-white rounded-lg flex items-center justify-center"
+                        style={{ boxShadow: 'inset 0 2px 6px rgba(0, 0, 0, 0.25)' }}
+                      >
+                        <Search size={32} className="text-[#756E33]" />
+                      </div>
+                    </div>
 
-                {/* Description */}
-                <p className="text-[#525252] leading-relaxed font-nunito-light">
-                  {step.description}
-                </p>
-              </div>
-
-              {/* Arrow (except for last item) */}
-              {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                  <ArrowRight size={24} className="text-[#007628]" />
+                    {/* Text Content - Right Side */}
+                    <div className="flex-1">
+                      <h3 className="text-xl font-kannada-regular text-[#222222] mb-4 leading-tight whitespace-pre-line">
+                        SOURCING & VETTING
+                      </h3>
+                      <p className="text-[#525252] leading-relaxed font-nunito-light">
+                        We identify and vet reliable farmers and aggregators in Ghana's top maize-growing regions.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              )}
+              </div>
             </motion.div>
-          ))}
+
+            {/* Step 2: QUALITY ASSURANCE */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="group relative flex-shrink-0"
+              style={{ width: '320px' }}
+            >
+              <div className="relative w-full h-80">
+                {/* Yellow Brand Motif Background */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <img
+                    src="/Brand-Motif-Card-Yellow-Organic.svg"
+                    alt="Card background motif"
+                    className="w-full h-full object-contain scale-125"
+                  />
+                </div>
+
+                {/* Content Container - Centered within motif */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="flex items-center gap-2 max-w-xs">
+                    {/* Icon Container - Left Side */}
+                    <div className="flex-shrink-0">
+                      <div 
+                        className="w-16 h-16 bg-white rounded-lg flex items-center justify-center"
+                        style={{ boxShadow: 'inset 0 2px 6px rgba(0, 0, 0, 0.25)' }}
+                      >
+                        <Handshake size={32} className="text-[#007628]" />
+                      </div>
+                    </div>
+
+                    {/* Text Content - Right Side */}
+                    <div className="flex-1">
+                      <h3 className="text-xl font-kannada-regular text-[#222222] mb-4 leading-tight whitespace-pre-line">
+                        QUALITY ASSURANCE
+                      </h3>
+                      <p className="text-[#525252] leading-relaxed font-nunito-light">
+                        Every batch is tested for moisture content and aflatoxin levels before acceptance.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Step 3: AGGREGATION & DELIVERY */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="group relative flex-shrink-0"
+              style={{ width: '320px' }}
+            >
+              <div className="relative w-full h-80">
+                {/* Yellow Brand Motif Background */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <img
+                    src="/Brand-Motif-Card-Yellow-Organic.svg"
+                    alt="Card background motif"
+                    className="w-full h-full object-contain scale-125"
+                  />
+                </div>
+
+                {/* Content Container - Centered within motif */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="flex items-center gap-2 max-w-xs">
+                    {/* Icon Container - Left Side */}
+                    <div className="flex-shrink-0">
+                      <div 
+                        className="w-16 h-16 bg-white rounded-lg flex items-center justify-center"
+                        style={{ boxShadow: 'inset 0 2px 6px rgba(0, 0, 0, 0.25)' }}
+                      >
+                        <Truck size={32} className="text-[#D09229]" />
+                      </div>
+                    </div>
+
+                    {/* Text Content - Right Side */}
+                    <div className="flex-1">
+                      <h3 className="text-xl font-kannada-regular text-[#222222] mb-4 leading-tight whitespace-pre-line">
+                        AGGREGATION & DELIVERY
+                      </h3>
+                      <p className="text-[#525252] leading-relaxed font-nunito-light">
+                        We coordinate pickups, storage, and timely delivery to your specified location.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Step 4: ONGOING SUPPORT */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="group relative flex-shrink-0"
+              style={{ width: '320px' }}
+            >
+              <div className="relative w-full h-80">
+                {/* Yellow Brand Motif Background */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <img
+                    src="/Brand-Motif-Card-Yellow-Organic.svg"
+                    alt="Card background motif"
+                    className="w-full h-full object-contain scale-125"
+                  />
+                </div>
+
+                {/* Content Container - Centered within motif */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="flex items-center gap-2 max-w-xs">
+                    {/* Icon Container - Left Side */}
+                    <div className="flex-shrink-0">
+                      <div 
+                        className="w-16 h-16 bg-white rounded-lg flex items-center justify-center"
+                        style={{ boxShadow: 'inset 0 2px 6px rgba(0, 0, 0, 0.25)' }}
+                      >
+                        <CheckCircle size={32} className="text-[#756E33]" />
+                      </div>
+                    </div>
+
+                    {/* Text Content - Right Side */}
+                    <div className="flex-1">
+                      <h3 className="text-xl font-kannada-regular text-[#222222] mb-4 leading-tight whitespace-pre-line">
+                        ONGOING SUPPORT
+                      </h3>
+                      <p className="text-[#525252] leading-relaxed font-nunito-light">
+                        We maintain relationships with suppliers to ensure consistent quality and supply.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
 
         {/* Call to Action */}

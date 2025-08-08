@@ -16,7 +16,7 @@ const contactMethods = [
     title: "WHATSAPP",
     description: "Quick responses for urgent inquiries",
     contact: "+233 XX XXX XXXX",
-    color: "bg-[#F3EE33]/20",
+    brandMotif: "/Brand-Motif-Contact-Us-3.svg",
     iconColor: "text-[#756E33]"
   },
   {
@@ -24,7 +24,7 @@ const contactMethods = [
     title: "PHONE",
     description: "Direct conversation for complex discussions",
     contact: "+233 XX XXX XXXX",
-    color: "bg-[#007628]/20",
+    brandMotif: "/Brand-Motif-Contact-Us-3.svg",
     iconColor: "text-[#007628]"
   },
   {
@@ -32,7 +32,7 @@ const contactMethods = [
     title: "EMAIL",
     description: "Detailed proposals and documentation",
     contact: "hello@baobabfrontiers.com",
-    color: "bg-[#D09229]/20",
+    brandMotif: "/Brand-Motif-Contact-Us-3.svg",
     iconColor: "text-[#D09229]"
   },
   {
@@ -40,14 +40,14 @@ const contactMethods = [
     title: "OFFICE",
     description: "Visit us for face-to-face meetings",
     contact: "Accra, Ghana",
-    color: "bg-[#756E33]/20",
+    brandMotif: "/Brand-Motif-Contact-Us-3.svg",
     iconColor: "text-[#756E33]"
   }
 ];
 
 export default function LetsTalk() {
   return (
-    <section id="lets-talk" className="py-20 bg-white">
+    <section id="lets-talk" className="py-20 bg-[#F5F5DC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -72,7 +72,7 @@ export default function LetsTalk() {
           </motion.div>
 
           {/* Section Title */}
-          <h2 className="text-4xl md:text-5xl font-kannada-bold text-[#222222] mb-4">
+          <h2 className="text-4xl md:text-5xl font-kannada-bold text-[#222222] mb-8">
             LET'S TALK
           </h2>
 
@@ -92,28 +92,48 @@ export default function LetsTalk() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group"
+              className="group relative"
             >
-              <div className={`p-6 rounded-3xl ${method.color} h-full card-hover border border-gray-100 text-center`}>
-                {/* Icon */}
-                <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-4 shadow-lg group-hover:shadow-xl transition-shadow mx-auto">
-                  <method.icon size={24} className={method.iconColor} />
+              {/* Brand Motif Background */}
+              <div className="relative w-full h-80">
+                {/* Yellow Brand Motif Background */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <img
+                    src={method.brandMotif}
+                    alt="Contact method background motif"
+                    className="w-full h-full object-contain scale-100"
+                  />
                 </div>
 
-                {/* Title */}
-                <h3 className="text-lg font-kannada-regular text-[#222222] mb-2">
-                  {method.title}
-                </h3>
+                {/* Content Container - Centered within motif */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center max-w-xs px-6">
+                    {/* Icon Container - Left Side */}
+                    <div className="flex-shrink-0">
+                      <div 
+                        className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-4 mx-auto"
+                        style={{ boxShadow: 'inset 0 2px 6px rgba(0, 0, 0, 0.25)' }}
+                      >
+                        <method.icon size={24} className={method.iconColor} />
+                      </div>
+                    </div>
 
-                {/* Description */}
-                <p className="text-sm text-[#525252] font-nunito-light mb-3">
-                  {method.description}
-                </p>
+                    {/* Title */}
+                    <h3 className="text-lg font-kannada-regular text-[#222222] mb-2">
+                      {method.title}
+                    </h3>
 
-                {/* Contact Info */}
-                <p className="text-[#007628] font-nunito-light font-medium">
-                  {method.contact}
-                </p>
+                    {/* Description */}
+                    <p className="text-sm text-[#525252] font-nunito-light mb-3">
+                      {method.description}
+                    </p>
+
+                    {/* Contact Info */}
+                    <p className="text-[#007628] font-nunito-light font-medium">
+                      {method.contact}
+                    </p>
+                  </div>
+                </div>
               </div>
             </motion.div>
           ))}
