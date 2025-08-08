@@ -55,7 +55,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="max-w-[824px] mx-auto text-xl text-[#525252] leading-relaxed font-nunito-light -mt-0.5"
           >
-            We connect trusted Ghanaian maize producers, aggregators and importers with feed producers, processors, and exporters who need consistent, high-quality yellow maize. We guarantee premium-grade maize delivered exactly when needed at the best possible prices.
+            We connect trusted Ghanaian maize producers, aggregators and importers with feed producers, processors, and exporters who need consistent, high-quality yellow maize.
           </motion.p>
 
           {/* Call to Action Buttons - All rounded as requested */}
