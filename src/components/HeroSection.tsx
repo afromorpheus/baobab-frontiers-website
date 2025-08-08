@@ -53,7 +53,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="w-52 md:max-w-[900px] mx-auto text-xl text-[#525252] leading-relaxed font-nunito-light -mt-0.5"
+            className="w-52 md:max-w-[700px] mx-auto text-xl text-[#525252] leading-relaxed font-nunito-light -mt-0.5"
           >
             We connect trusted Ghanaian maize producers, aggregators and importers with feed producers, processors, and exporters who need consistent, high-quality yellow maize.
           </motion.p>
