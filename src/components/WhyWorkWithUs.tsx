@@ -74,7 +74,7 @@ export default function WhyWorkWithUs() {
 
           {/* Section Description */}
           <p className="max-w-3xl mx-auto text-xl text-[#525252] leading-relaxed font-nunito-light">
-            We're not just another supplier. We're your trusted partner in sourcing quality yellow maize, 
+            We&apos;re not just another supplier. We&apos;re your trusted partner in sourcing quality yellow maize, 
             with a commitment to excellence that goes beyond the transaction.
           </p>
         </motion.div>

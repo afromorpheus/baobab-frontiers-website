@@ -3,10 +3,9 @@
 import { motion } from 'framer-motion';
 import { 
   Search, 
-  Handshake, 
+  Shield, 
   Truck, 
-  CheckCircle,
-  ArrowRight
+  CheckCircle 
 } from 'lucide-react';
 
 const steps = [
@@ -18,7 +17,7 @@ const steps = [
     iconColor: "text-[#756E33]"
   },
   {
-    icon: Handshake,
+    icon: Shield,
     title: "QUALITY ASSURANCE",
     description: "Every batch is tested for moisture content and aflatoxin levels before acceptance.",
     color: "bg-[#007628]/20",

@@ -5,9 +5,7 @@ import {
   MessageCircle, 
   Phone, 
   Mail, 
-  MapPin,
-  Send,
-  ArrowRight
+  MapPin 
 } from 'lucide-react';
 
 const contactMethods = [

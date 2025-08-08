@@ -130,8 +130,8 @@ export default function WhatWeOffer() {
 
           {/* Section Description */}
           <p className="max-w-2xl mx-auto text-xl text-[#525252] leading-relaxed font-nunito-light">
-            We specialize in the aggregation and delivery of yellow maize from Ghana's top growing regions. 
-            Whether you're sourcing for livestock feed, grain export, or food processing, we guarantee:
+            We&apos;re not just another supplier. We&apos;re your trusted partner in sourcing quality yellow maize, 
+            with a commitment to excellence that goes beyond the transaction.
           </p>
         </motion.div>
 

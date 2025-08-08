@@ -87,9 +87,8 @@ export default function SupportingLocalAgriculture() {
           </h2>
 
           {/* Section Description */}
-          <p className="max-w-3xl mx-auto text-xl text-[#525252] leading-relaxed font-nunito-light">
-            Beyond business, we're committed to strengthening Ghana's agricultural sector and 
-            supporting the communities that make it possible.
+          <p className="text-lg text-[#525252] leading-relaxed font-nunito-light mb-8">
+            We&apos;re committed to supporting Ghana&apos;s agricultural sector by connecting local farmers with global markets.
           </p>
         </motion.div>
 
@@ -132,10 +131,14 @@ export default function SupportingLocalAgriculture() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto mt-16"
         >
-          <blockquote className="text-2xl italic text-[#756E33] font-nunito-light text-center leading-relaxed">
-            "We believe that strong local agriculture is the foundation of a prosperous nation. 
-            Every transaction we make strengthens this foundation."
-          </blockquote>
+          <div className="text-center">
+            <h3 className="text-2xl font-kannada-bold text-[#222222] mb-4">
+              &ldquo;Quality from the Source&rdquo;
+            </h3>
+            <p className="text-lg text-[#525252] font-nunito-light">
+              &ldquo;We believe in the power of local agriculture to feed the world&rdquo;
+            </p>
+          </div>
         </motion.div>
       </div>
     </section>
