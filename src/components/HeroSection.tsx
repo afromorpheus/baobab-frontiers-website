@@ -26,14 +26,14 @@ export default function HeroSection() {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mx-auto w-6 h-24 md:w-52 md:h-52 flex items-center justify-center"
+            className="mx-auto w-24 h-24 md:w-52 md:h-52 flex items-center justify-center"
           >
             <Image
               src="/HiRes Corn.svg"
               alt="High Resolution Corn"
               width={208}
               height={208}
-              className="w-6 h-24 md:w-52 md:h-52 drop-shadow-2xl"
+              className="w-24 h-24 md:w-52 md:h-52 drop-shadow-2xl"
               priority
             />
           </motion.div>
