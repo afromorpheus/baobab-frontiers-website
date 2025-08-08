@@ -78,7 +78,7 @@ export default function LetsTalk() {
         </motion.div>
 
         {/* Contact Methods Grid */}
-        <div className="grid grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-2 gap-12 mb-12">
           {contactMethods.map((method, index) => (
             <motion.div
               key={index}
@@ -89,7 +89,7 @@ export default function LetsTalk() {
               className="group relative"
             >
               {/* Brand Motif Background */}
-              <div className="relative w-full h-80">
+              <div className="relative w-full h-96">
                 {/* Yellow Brand Motif Background */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <img
@@ -101,7 +101,7 @@ export default function LetsTalk() {
 
                 {/* Content Container - Centered within motif */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center max-w-xs px-6">
+                  <div className="text-center max-w-sm px-8">
                     {/* Icon Container - Left Side */}
                     <div className="flex-shrink-0">
                       <div 
