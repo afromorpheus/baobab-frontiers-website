@@ -107,7 +107,7 @@ export default function WhyWorkWithUs() {
               className="absolute -left-16 top-1/2 transform -translate-y-1/2 z-10"
             >
               <div className="flex flex-col items-center space-y-2">
-                <span className="text-sm text-[#525252] font-nunito-light uppercase tracking-wider">Scroll</span>
+                <span className="text-sm text-[#525252] font-nunito-light uppercase tracking-wider">Swipe</span>
                 <div className="w-6 h-10 border-2 border-[#525252] rounded-full flex justify-center relative overflow-hidden">
                   <motion.div
                     animate={{ y: [0, 12, 0] }}
