@@ -135,108 +135,13 @@ export default function WhatWeOffer() {
           </p>
         </motion.div>
 
-        {/* Interactive Three-Column Layout - Centered */}
-        <div className="flex justify-center">
-          <div className="grid grid-cols-1 lg:grid-cols-[auto_auto_1fr] items-center max-w-6xl w-full gap-8">
-
-          {/* Left Column - Interactive Features List */}
-          <div className="flex flex-col justify-center w-80">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
-            className="space-y-2"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-          {features.map((feature, index) => (
+        {/* Image Pane at Top */}
+        <div className="flex justify-center mb-8">
+          <div className="w-full max-w-4xl">
             <motion.div
-              key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                onClick={() => handleFeatureSelect(index)}
-                onMouseEnter={() => setHoveredFeature(index)}
-                onMouseLeave={() => setHoveredFeature(-1)}
-                className={`flex items-center gap-3 p-2 cursor-pointer transition-all duration-300 h-20 ${
-                  activeFeature === index
-                    ? 'bg-[#F3EE33]/20'
-                    : 'hover:bg-[#F3EE33]/10'
-                }`}
-              >
-                {/* Feature Text - Title Only (Right-aligned to icon) */}
-                <div className="flex-1 text-right pr-2 min-h-[3rem] flex items-center justify-end">
-                  <h3 className={`text-xl leading-tight transition-colors duration-300 ${
-                    activeFeature === index ? 'text-[#007628] font-kannada-bold' : 'text-[#222222] font-kannada-regular'
-                  }`}>
-                    {feature.title.split(' ').length > 1 ? (
-                      <>
-                        {feature.title.split(' ')[0]}<br />
-                        {feature.title.split(' ').slice(1).join(' ')}
-                      </>
-                    ) : (
-                      feature.title
-                    )}
-                  </h3>
-                </div>
-
-                {/* Brand Motif Icon Container - All Green with State Logic */}
-                <div className="relative flex-shrink-0 w-20 h-16">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <img
-                      src={
-                        activeFeature === index
-                          ? feature.motifFilled
-                          : hoveredFeature === index
-                            ? feature.motifHover
-                            : feature.motifOutline
-                      }
-                      alt="Brand motif"
-                      className="w-full h-full object-contain transition-all duration-300"
-                    />
-                  </div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <feature.icon
-                      size={24}
-                      className={`${activeFeature === index ? 'text-white' : feature.iconColor} transition-colors duration-300`}
-                    />
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-          </div>
-
-          {/* Center Column - Caption Text */}
-          <div className="hidden lg:flex flex-col justify-center w-64">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="text-center py-4"
-            >
-              <motion.p
-                key={activeFeature}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.3 }}
-                className="text-[#007628] font-nunito-light leading-tight text-lg"
-                style={{ willChange: 'opacity' }}
-              >
-                {features[activeFeature].description}
-              </motion.p>
-            </motion.div>
-          </div>
-
-          {/* Right Column - Dynamic Image Display */}
-          <div className="w-full flex flex-col justify-center">
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
               viewport={{ once: true }}
               className="w-full"
             >
@@ -307,23 +212,85 @@ export default function WhatWeOffer() {
               </div>
             </div>
 
-            {/* Mobile Caption - Text Only (hidden on desktop) */}
-            <div className="lg:hidden mt-3 relative mx-1">
-              <div className="text-center py-2 min-h-[2rem] flex items-center justify-center">
-                <motion.p
-                  key={activeFeature}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.3 }}
-                  className="text-[#007628] font-nunito-light leading-tight text-base"
-                  style={{ willChange: 'opacity' }}
-                >
-                  {features[activeFeature].description}
-                </motion.p>
-              </div>
+            {/* Caption Text Below Image */}
+            <div className="mt-4 text-center">
+              <motion.p
+                key={activeFeature}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+                className="text-[#007628] font-nunito-light leading-tight text-lg"
+                style={{ willChange: 'opacity' }}
+              >
+                {features[activeFeature].description}
+              </motion.p>
             </div>
             </motion.div>
           </div>
+        </div>
+
+        {/* Horizontal Feature List Below Image */}
+        <div className="flex justify-center">
+          <div className="w-full max-w-6xl">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              viewport={{ once: true }}
+              className="flex flex-wrap justify-center gap-4"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                onClick={() => handleFeatureSelect(index)}
+                onMouseEnter={() => setHoveredFeature(index)}
+                onMouseLeave={() => setHoveredFeature(-1)}
+                className={`flex flex-col items-center gap-3 p-4 cursor-pointer transition-all duration-300 min-w-[200px] ${
+                  activeFeature === index
+                    ? 'bg-[#F3EE33]/20 rounded-lg'
+                    : 'hover:bg-[#F3EE33]/10 rounded-lg'
+                }`}
+              >
+                {/* Brand Motif Icon Container */}
+                <div className="relative flex-shrink-0 w-20 h-16">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <img
+                      src={
+                        activeFeature === index
+                          ? feature.motifFilled
+                          : hoveredFeature === index
+                            ? feature.motifHover
+                            : feature.motifOutline
+                      }
+                      alt="Brand motif"
+                      className="w-full h-full object-contain transition-all duration-300"
+                    />
+                  </div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <feature.icon
+                      size={24}
+                      className={`${activeFeature === index ? 'text-white' : feature.iconColor} transition-colors duration-300`}
+                    />
+                  </div>
+                </div>
+
+                {/* Feature Text - Centered */}
+                <div className="text-center">
+                  <h3 className={`text-lg leading-tight transition-colors duration-300 ${
+                    activeFeature === index ? 'text-[#007628] font-kannada-bold' : 'text-[#222222] font-kannada-regular'
+                  }`}>
+                    {feature.title}
+                  </h3>
+                </div>
+              </motion.div>
+            ))}
+            </motion.div>
           </div>
         </div>
 
