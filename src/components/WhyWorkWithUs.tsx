@@ -82,7 +82,7 @@ export default function WhyWorkWithUs() {
         {/* Benefits Slider */}
         <div className="relative w-full">
           {/* Slider Container */}
-          <div className="flex overflow-x-auto scrollbar-hide gap-[5px] py-10 px-4 pl-24" style={{ minHeight: '450px' }}>
+          <div className="flex overflow-x-auto scrollbar-hide gap-[2px] py-10 px-4 pl-24" style={{ minHeight: '450px' }}>
             {/* Spacer to prevent first card truncation */}
             <div className="flex-shrink-0 w-8"></div>
             
