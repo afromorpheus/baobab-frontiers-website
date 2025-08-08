@@ -78,7 +78,7 @@ export default function LetsTalk() {
         </motion.div>
 
         {/* Contact Methods Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-2 gap-8 mb-12">
           {contactMethods.map((method, index) => (
             <motion.div
               key={index}
@@ -95,7 +95,7 @@ export default function LetsTalk() {
                   <img
                     src="/Brand-Motif-Card-Yellow-Contact-Alt.svg"
                     alt="Contact Card Motif"
-                    className="w-full h-full object-contain scale-110"
+                    className="w-full h-full object-contain scale-75"
                   />
                 </div>
 
