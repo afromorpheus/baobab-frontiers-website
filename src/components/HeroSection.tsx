@@ -38,28 +38,14 @@ export default function HeroSection() {
             />
           </motion.div>
 
-          {/* Main Headline - With 365 and three-motif composition */}
+          {/* Main Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-4xl md:text-6xl font-kannada-bold text-[#007628] leading-tight flex items-end justify-center space-x-4"
+            className="text-4xl md:text-6xl font-kannada-bold text-[#007628] leading-tight text-center"
           >
-            <span>CONSISTENT MAIZE SUPPLY,</span>
-            <motion.div 
-              className="inline-block"
-              animate={{ y: [0, -3, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <Image
-                src="/Brand-Motif-Tapoli-Alt.svg"
-                alt="Tapoli Alt Brand Motif"
-                width={240}
-                height={160}
-                className="h-24 w-auto"
-                priority
-              />
-            </motion.div>
+            ALL YEAR MAIZE SUPPLY
           </motion.h1>
 
           {/* Description */}
