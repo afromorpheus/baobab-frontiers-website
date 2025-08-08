@@ -88,7 +88,7 @@ export default function LetsTalk() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="group relative flex-shrink-0"
-                style={{ width: '300px', marginRight: index < contactMethods.length - 1 ? '-75px' : '0' }}
+                style={{ width: '300px', marginRight: index < contactMethods.length - 1 ? '-30px' : '0' }}
               >
                 {/* Brand Motif Background */}
                 <div className="relative w-full h-96 md:h-80">
@@ -97,7 +97,7 @@ export default function LetsTalk() {
                     <img
                       src="/Brand-Motif-Card-Yellow-Contact-Alt.svg"
                       alt="Contact Card Motif"
-                      className="w-full h-full object-contain scale-75"
+                      className="w-full h-full object-contain scale-90"
                     />
                   </div>
 
