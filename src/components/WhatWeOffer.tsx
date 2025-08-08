@@ -175,13 +175,19 @@ export default function WhatWeOffer() {
                             : feature.motifOutline
                       }
                       alt="Brand motif"
-                      className="w-full h-full object-contain transition-all duration-300"
+                      className="w-full h-full object-contain transition-all duration-300 md:block hidden"
+                    />
+                    {/* Mobile version - always show outline */}
+                    <img
+                      src={feature.motifOutline}
+                      alt="Brand motif"
+                      className="w-full h-full object-contain transition-all duration-300 block md:hidden"
                     />
                   </div>
                   <div className="absolute inset-0 flex items-center justify-center">
                     <feature.icon
                       size={32}
-                      className={`${activeFeature === index ? 'text-white' : feature.iconColor} transition-colors duration-300 scale-[0.44] md:scale-100`}
+                      className={`${activeFeature === index ? 'md:text-white text-[#007628]' : feature.iconColor} transition-colors duration-300 scale-[0.44] md:scale-100`}
                     />
                   </div>
                 </div>
@@ -189,7 +195,7 @@ export default function WhatWeOffer() {
                 {/* Feature Text - Centered */}
                 <div className="text-center">
                   <h3 className={`text-xs md:text-lg leading-tight transition-colors duration-300 ${
-                    activeFeature === index ? 'text-[#007628] font-kannada-bold' : 'text-[#222222] font-kannada-regular'
+                    activeFeature === index ? 'md:text-[#007628] md:font-kannada-bold text-[#222222] font-kannada-regular' : 'text-[#222222] font-kannada-regular'
                   }`}>
                     {feature.title}
                   </h3>
