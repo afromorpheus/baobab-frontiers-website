@@ -94,7 +94,7 @@ export default function WhyWorkWithUs() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="group relative flex-shrink-0"
-                style={{ width: '544px' }}
+                style={{ width: '544px', marginRight: '-8px' }}
               >
                 {/* Card Container */}
                 <div className="relative w-full h-80">
