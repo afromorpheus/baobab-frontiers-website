@@ -252,7 +252,7 @@ export default function WhatWeOffer() {
                 onClick={() => handleFeatureSelect(index)}
                 onMouseEnter={() => setHoveredFeature(index)}
                 onMouseLeave={() => setHoveredFeature(-1)}
-                className={`flex flex-col items-center gap-2 md:gap-3 p-3 md:p-4 cursor-pointer transition-all duration-300 w-full md:min-w-[200px] ${
+                className={`flex flex-col items-center gap-2 md:gap-3 p-3 md:p-4 cursor-pointer transition-all duration-300 w-full md:w-auto md:min-w-[200px] ${
                   activeFeature === index
                     ? 'bg-[#F3EE33]/20 rounded-lg'
                     : 'hover:bg-[#F3EE33]/10 rounded-lg'
