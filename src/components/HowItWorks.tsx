@@ -109,7 +109,7 @@ export default function HowItWorks() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6 }}
                 className="absolute top-1/2 transform -translate-y-1/2 z-10"
-                style={{ left: '-48px' }}
+                style={{ left: '-40px' }}
               >
                 <div className="flex flex-col items-center space-y-2">
                   <span className="text-sm text-[#525252] font-nunito-light uppercase tracking-wider">Swipe</span>
