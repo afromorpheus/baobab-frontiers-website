@@ -135,23 +135,6 @@ export default function WhatWeOffer() {
           </p>
         </motion.div>
 
-        {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-            className="bg-[#007628] text-white px-8 py-4 rounded-full font-kannada-bold text-lg hover:bg-[#005d1f] transition-colors duration-300 shadow-lg hover:shadow-xl"
-          >
-            GET PREMIUM MAIZE TODAY
-          </motion.button>
-        </motion.div>
-
         {/* Horizontal Feature List Above Image */}
         <div className="flex justify-center mb-8">
           <div className="w-full max-w-6xl">
@@ -228,7 +211,32 @@ export default function WhatWeOffer() {
               className="w-full"
             >
             {/* Main Image Container - Green Picture Gallery Motif */}
-            <div className="relative w-full aspect-[4/3]" style={{ willChange: 'transform' }}>
+            <div 
+              className="relative w-full aspect-[4/3]" 
+              style={{ willChange: 'transform' }}
+              onTouchStart={(e) => {
+                const touch = e.touches[0];
+                const startX = touch.clientX;
+                const handleTouchEnd = (e: TouchEvent) => {
+                  const touch = e.changedTouches[0];
+                  const endX = touch.clientX;
+                  const diffX = startX - endX;
+                  
+                  if (Math.abs(diffX) > 50) { // Minimum swipe distance
+                    if (diffX > 0) {
+                      // Swipe left - next feature
+                      setActiveFeature((prev) => (prev + 1) % features.length);
+                    } else {
+                      // Swipe right - previous feature
+                      setActiveFeature((prev) => (prev - 1 + features.length) % features.length);
+                    }
+                  }
+                  
+                  document.removeEventListener('touchend', handleTouchEnd);
+                };
+                document.addEventListener('touchend', handleTouchEnd);
+              }}
+            >
               {/* Brand Motif Background */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <img
@@ -311,6 +319,23 @@ export default function WhatWeOffer() {
             </motion.div>
           </div>
         </div>
+
+        {/* CTA Section - Moved Below Slider Indicator */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          viewport={{ once: true }}
+          className="text-center mt-8"
+        >
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+            className="bg-[#007628] text-white px-8 py-4 rounded-full font-kannada-bold text-lg hover:bg-[#005d1f] transition-colors duration-300 shadow-lg hover:shadow-xl"
+          >
+            GET PREMIUM MAIZE TODAY
+          </motion.button>
+        </motion.div>
       </div>
     </section>
   );
