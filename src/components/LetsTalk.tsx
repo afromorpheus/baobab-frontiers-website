@@ -62,11 +62,13 @@ export default function LetsTalk() {
             whileInView={{ scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="mx-auto w-24 h-24 bg-[#F3EE33]/20 rounded-3xl flex items-center justify-center mb-4"
+            className="mx-auto mb-4"
           >
-            <div className="w-12 h-12 bg-[#007628] rounded-2xl flex items-center justify-center">
-              <div className="w-6 h-6 bg-white rounded-xl"></div>
-            </div>
+            <img
+              src="/Brand-Motif-Ahoden-Alt.svg"
+              alt="Ahoden Brand Motif"
+              className="h-24 w-auto"
+            />
           </motion.div>
 
           {/* Section Title */}

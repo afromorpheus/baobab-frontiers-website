@@ -72,11 +72,13 @@ export default function WhyWorkWithUs() {
             whileInView={{ scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="mx-auto w-24 h-24 bg-[#756E33]/20 rounded-3xl flex items-center justify-center mb-4"
+            className="mx-auto mb-4"
           >
-            <div className="w-12 h-12 bg-[#F3EE33] rounded-2xl flex items-center justify-center">
-              <div className="w-6 h-6 bg-[#007628] rounded-xl"></div>
-            </div>
+            <img
+              src="/Brand-Motif-Asanka-Alt.svg"
+              alt="Asanka Brand Motif"
+              className="h-24 w-auto"
+            />
           </motion.div>
 
           {/* Section Title */}

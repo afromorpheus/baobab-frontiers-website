@@ -52,8 +52,8 @@ export default function HeroSection() {
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             >
               <Image
-                src="/Green Brand Motif.svg"
-                alt="365 Brand Motif"
+                src="/Brand-Motif-Tapoli-New.svg"
+                alt="Tapoli Brand Motif"
                 width={240}
                 height={160}
                 className="h-20 w-auto"
