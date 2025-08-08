@@ -26,14 +26,14 @@ export default function HeroSection() {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mx-auto w-52 h-40 md:h-52 flex items-center justify-center"
+            className="mx-auto w-6 h-6 md:w-52 md:h-52 flex items-center justify-center"
           >
             <Image
               src="/HiRes Corn.svg"
               alt="High Resolution Corn"
               width={208}
               height={208}
-              className="w-52 h-40 md:h-52 drop-shadow-2xl"
+              className="w-6 h-6 md:w-52 md:h-52 drop-shadow-2xl"
               priority
             />
           </motion.div>
@@ -43,7 +43,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-4xl md:text-6xl font-kannada-bold text-[#007628] leading-tight text-center"
+            className="text-2xl md:text-6xl font-kannada-bold text-[#007628] leading-tight text-center"
           >
             ALL YEAR MAIZE SUPPLY
           </motion.h1>
@@ -53,7 +53,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="w-80 md:w-auto md:max-w-[calc(100%-128px)] mx-auto text-xl text-[#525252] leading-relaxed font-nunito-light -mt-0.5"
+            className="w-80 md:w-auto md:max-w-[calc(100%-128px)] mx-auto text-sm md:text-xl text-[#525252] leading-relaxed font-nunito-light -mt-0.5"
           >
             We connect trusted Ghanaian maize producers, aggregators and importers with feed producers, processors, and exporters who need consistent, high-quality yellow maize.
           </motion.p>
@@ -65,12 +65,12 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
           >
-            <button className="group flex items-center space-x-2 px-8 py-4 bg-[#F3EE33] text-[#222222] rounded-full hover:bg-[#D09229] transition-all duration-300 font-kannada-regular text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            <button className="group flex items-center space-x-2 px-8 py-2 md:py-4 bg-[#F3EE33] text-[#222222] rounded-full hover:bg-[#D09229] transition-all duration-300 font-kannada-regular text-base md:text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">
               <span>REQUEST A QUOTE</span>
               <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </button>
             
-            <button className="flex items-center space-x-2 px-8 py-4 bg-white border-2 border-[#007628] text-[#007628] rounded-full hover:bg-[#007628] hover:text-white transition-all duration-300 font-kannada-regular text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            <button className="flex items-center space-x-2 px-8 py-2 md:py-4 bg-white border-2 border-[#007628] text-[#007628] rounded-full hover:bg-[#007628] hover:text-white transition-all duration-300 font-kannada-regular text-base md:text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">
               <MessageCircle size={20} />
               <span>WHATSAPP US</span>
             </button>
