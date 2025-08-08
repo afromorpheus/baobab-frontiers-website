@@ -1,10 +1,25 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Building2, Factory, Ship, Users, Globe, ShoppingCart } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function WhoWeServe() {
   const sliderRef = useRef<HTMLDivElement>(null);
+  const [showScrollIndicators, setShowScrollIndicators] = useState(true);
+
+  // Hide scroll indicators when scrolling
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollIndicators(false);
+    };
+
+    const slider = sliderRef.current;
+    if (slider) {
+      slider.addEventListener('scroll', handleScroll);
+      return () => slider.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
 
 const customers = [
   {
@@ -64,6 +79,48 @@ const customers = [
 
         {/* Cards Container - Full Width */}
         <div className="relative w-full">
+          {/* Left Scroll Indicator */}
+          {showScrollIndicators && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6 }}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10"
+            >
+              <div className="flex flex-col items-center space-y-2">
+                <span className="text-sm text-[#525252] font-nunito-light uppercase">Scroll</span>
+                <div className="w-6 h-10 border-2 border-[#525252] rounded-full flex justify-center">
+                  <motion.div
+                    animate={{ x: [-2, 2, -2] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                    className="w-1 h-3 bg-[#007628] rounded-full mt-2"
+                  ></motion.div>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Right Scroll Indicator */}
+          {showScrollIndicators && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6 }}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10"
+            >
+              <div className="flex flex-col items-center space-y-2">
+                <span className="text-sm text-[#525252] font-nunito-light uppercase">Scroll</span>
+                <div className="w-6 h-10 border-2 border-[#525252] rounded-full flex justify-center">
+                  <motion.div
+                    animate={{ x: [2, -2, 2] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                    className="w-1 h-3 bg-[#007628] rounded-full mt-2"
+                  ></motion.div>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
           {/* Slider Container */}
           <div 
             ref={sliderRef}
