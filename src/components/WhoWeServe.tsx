@@ -67,7 +67,7 @@ const customers = [
           <img
             src="/Brand-Motif-Tapoli-New.svg"
             alt="Tapoli Brand Motif"
-            className="h-14 w-auto mb-8"
+            className="h-24 w-auto mb-8"
           />
           <h2 className="text-4xl md:text-5xl font-kannada-bold text-[#222222] mb-6">WHO WE SERVE</h2>
           <p className="text-xl text-[#525252] max-w-3xl text-center leading-relaxed font-nunito-light">

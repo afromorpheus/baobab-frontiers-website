@@ -125,12 +125,12 @@ export default function WhatWeOffer() {
             whileInView={{ scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="mx-auto w-24 h-36 flex items-center justify-center mb-4"
+            className="mx-auto mb-4 flex justify-center"
           >
             <img
               src="/Brand-Motif-Asanka-New.svg"
               alt="Asanka Brand Motif"
-              className="h-36 w-auto"
+              className="h-24 w-auto"
             />
           </motion.div>
 

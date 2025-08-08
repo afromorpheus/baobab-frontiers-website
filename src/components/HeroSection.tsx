@@ -56,7 +56,7 @@ export default function HeroSection() {
                 alt="Tapoli Brand Motif"
                 width={240}
                 height={160}
-                className="h-20 w-auto"
+                className="h-24 w-auto"
                 priority
               />
             </motion.div>
