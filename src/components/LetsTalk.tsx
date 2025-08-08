@@ -146,7 +146,7 @@ export default function LetsTalk() {
         >
           <div className="bg-[#F5F5DC] p-8 rounded-3xl border border-gray-100">
             <h3 className="text-2xl font-kannada-regular text-[#222222] mb-4 text-center">
-              SEND US A MESSAGE
+              SOURCE MAIZE FROM US
             </h3>
             
             <form className="space-y-6">
