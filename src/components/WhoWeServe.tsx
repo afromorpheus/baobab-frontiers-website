@@ -49,14 +49,14 @@ const customers = [
     <section id="customer" className="relative w-full bg-[#D09229]/20 py-12">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="flex flex-col items-center mb-16">
+        <div className="flex flex-col items-center mb-12">
           <img
             src="/Brand-Motif-Tapoli-New.svg"
             alt="Tapoli Brand Motif"
             className="h-24 w-auto mb-8"
           />
           <h2 className="text-4xl md:text-5xl font-kannada-bold text-[#222222] mb-6">WHO WE SERVE</h2>
-          <p className="text-xl text-[#525252] max-w-3xl text-center leading-relaxed font-nunito-light">
+          <p className="text-xl text-[#525252] max-w-2xl text-center leading-relaxed font-nunito-light">
             We work with a diverse range of businesses in the agricultural value chain,
             providing them with high-quality yellow maize that meets their specific needs.
           </p>
@@ -64,14 +64,10 @@ const customers = [
 
         {/* Cards Container - Full Width */}
         <div className="relative w-full">
-          {/* Gradient Fade Effects - Matching Background Color */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#D09229]/20 to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#D09229]/20 to-transparent z-10 pointer-events-none"></div>
-          
           {/* Slider Container */}
           <div 
             ref={sliderRef}
-            className="flex overflow-x-auto scrollbar-hide gap-0 py-12 pb-16 px-4"
+            className="flex overflow-x-auto scrollbar-hide gap-0 py-10 pb-16 px-4"
             style={{ minHeight: '360px' }}
           >
           {customers.map((customer, index) => (
@@ -97,16 +93,16 @@ const customers = [
                       {/* Icon Container - Left Side */}
                       <div className="flex-shrink-0">
                         <div 
-                          className="w-16 h-16 bg-white rounded-lg flex items-center justify-center"
+                          className="w-16 h-16 bg-[#F3EE33] rounded-lg flex items-center justify-center"
                           style={{ boxShadow: 'inset 0 2px 6px rgba(0, 0, 0, 0.25)' }}
                         >
-                  <customer.icon size={32} className={customer.iconColor} />
+                          <customer.icon size={32} className="text-[#2D2D2D]" />
                         </div>
-                </div>
+                      </div>
 
                       {/* Text Content - Right Side */}
                       <div className="flex-1">
-                        <h3 className="text-xl font-kannada-regular text-[#222222] mb-2 leading-tight whitespace-pre-line">
+                        <h3 className="text-xl font-kannada-regular group-hover:font-kannada-bold text-[#222222] mb-2 leading-tight whitespace-pre-line transition-all duration-300">
                           {customer.title}
                         </h3>
                         <p className="text-[#525252] leading-relaxed font-nunito-light">
@@ -127,7 +123,7 @@ const customers = [
           <h3 className="text-lg text-[#525252] font-nunito-light mb-8">
             Ready to source quality yellow maize for your business?
           </h3>
-          <button className="bg-[#007628] text-white px-8 py-3 rounded-full font-kannada-bold shadow-lg hover:shadow-xl hover:bg-[#005d1f] transition-all duration-300">
+          <button className="bg-[#007628] text-white px-8 py-4 rounded-full font-kannada-bold shadow-lg hover:shadow-xl hover:bg-[#005d1f] transition-all duration-300">
             GET STARTED TODAY
           </button>
         </div>

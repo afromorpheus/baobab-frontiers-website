@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#222222] text-white py-12">
+    <footer className="bg-white text-[#222222] py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center text-center space-y-1">
           {/* Centered Logo */}
@@ -32,7 +32,7 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <p className="text-sm font-kannada-regular text-[#007628] uppercase">
-              Connecting Ghana's finest yellow maize with global markets
+              Your maize sourcing partner
             </p>
           </motion.div>
 
@@ -43,10 +43,10 @@ export default function Footer() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <p className="text-sm font-nunito-light text-[#FFD330]">
+            <p className="text-sm font-nunito-light text-[#D09229]">
               © 2024 Baobab Frontiers. All rights reserved.
             </p>
-            <p className="text-sm font-nunito-light text-[#876E19]">
+            <p className="text-sm font-nunito-light text-[#525252]">
               Accra, Ghana
             </p>
           </motion.div>

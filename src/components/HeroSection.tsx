@@ -26,14 +26,14 @@ export default function HeroSection() {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mx-auto w-64 h-64 flex items-center justify-center mb-4"
+            className="mx-auto w-52 h-52 flex items-center justify-center"
           >
             <Image
               src="/HiRes Corn.svg"
               alt="High Resolution Corn"
-              width={256}
-              height={256}
-              className="w-64 h-64 drop-shadow-2xl"
+              width={208}
+              height={208}
+              className="w-52 h-52 drop-shadow-2xl"
               priority
             />
           </motion.div>
@@ -67,9 +67,9 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="max-w-3xl mx-auto text-xl text-[#525252] leading-relaxed font-nunito-light -mt-8"
+            className="max-w-[824px] mx-auto text-xl text-[#525252] leading-relaxed font-nunito-light -mt-0.5"
           >
-            We connect trusted Ghanaian farmers and aggregators with feed producers, processors, and exporters who need consistent, high-quality yellow maize. We guarantee clean, certified maize delivered exactly when needed at the best possible prices.
+            We connect trusted Ghanaian maize producers, aggregators and importers with feed producers, processors, and exporters who need consistent, high-quality yellow maize. We guarantee premium-grade maize delivered exactly when needed at the best possible prices.
           </motion.p>
 
           {/* Call to Action Buttons - All rounded as requested */}
@@ -77,7 +77,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-20"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
           >
             <button className="group flex items-center space-x-2 px-8 py-4 bg-[#F3EE33] text-[#222222] rounded-full hover:bg-[#D09229] transition-all duration-300 font-kannada-regular text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">
               <span>REQUEST A QUOTE</span>

@@ -12,13 +12,6 @@ import {
 
 const benefits = [
   {
-    icon: Award,
-    title: "PROVEN TRACK RECORD",
-    description: "Years of experience connecting quality suppliers with reliable buyers across Ghana.",
-    color: "bg-[#F3EE33]/20",
-    iconColor: "text-[#756E33]"
-  },
-  {
     icon: Clock,
     title: "TIMELY DELIVERY",
     description: "We understand the importance of meeting deadlines in the agricultural supply chain.",
@@ -45,13 +38,6 @@ const benefits = [
     description: "Our efficient operations and strong supplier relationships help keep costs competitive.",
     color: "bg-[#A3B3B5]/20",
     iconColor: "text-[#A3B3B5]"
-  },
-  {
-    icon: Heart,
-    title: "COMMUNITY IMPACT",
-    description: "We support local farmers and contribute to sustainable agricultural development in Ghana.",
-    color: "bg-[#F3EE33]/20",
-    iconColor: "text-[#756E33]"
   }
 ];
 
@@ -64,7 +50,7 @@ export default function WhyWorkWithUs() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           {/* Section Icon */}
           <motion.div
@@ -72,7 +58,7 @@ export default function WhyWorkWithUs() {
             whileInView={{ scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="mx-auto mb-4 flex justify-center"
+            className="mx-auto mb-8 flex justify-center"
           >
             <img
               src="/Brand-Motif-Asanka-Alt.svg"
@@ -95,12 +81,8 @@ export default function WhyWorkWithUs() {
 
         {/* Benefits Slider */}
         <div className="relative w-full">
-          {/* Gradient Fade Effects - Matching Background Color */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#F3EE33]/20 to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#F3EE33]/20 to-transparent z-10 pointer-events-none"></div>
-          
           {/* Slider Container */}
-          <div className="flex overflow-x-auto scrollbar-hide gap-0 py-16 px-4 pl-24" style={{ minHeight: '450px' }}>
+          <div className="flex overflow-x-auto scrollbar-hide gap-0 py-10 px-4 pl-24" style={{ minHeight: '450px' }}>
             {/* Spacer to prevent first card truncation */}
             <div className="flex-shrink-0 w-8"></div>
             
@@ -119,9 +101,9 @@ export default function WhyWorkWithUs() {
                   {/* Yellow Brand Motif Background */}
                   <div className="absolute inset-0 flex items-center justify-center">
                     <img
-                      src="/Brand-Motif-Card-Yellow-Organic.svg"
+                      src="/Brand-Motif-Card-Yellow-Timely-Delivery.svg"
                       alt="Card background motif"
-                      className="w-full h-full object-contain scale-110"
+                      className="w-full h-full object-contain scale-100"
                     />
                   </div>
 
@@ -131,19 +113,19 @@ export default function WhyWorkWithUs() {
                       {/* Icon Container - Left Side */}
                       <div className="flex-shrink-0">
                         <div 
-                          className="w-16 h-16 bg-white rounded-lg flex items-center justify-center"
+                          className="w-16 h-16 bg-[#F3EE33] rounded-lg flex items-center justify-center"
                           style={{ boxShadow: 'inset 0 2px 6px rgba(0, 0, 0, 0.25)' }}
                         >
-                          <benefit.icon size={32} className={benefit.iconColor} />
+                          <benefit.icon size={32} className="text-[#876E19] opacity-100" />
                         </div>
                       </div>
 
                       {/* Text Content - Right Side */}
                       <div className="flex-1">
-                        <h3 className="text-xl font-kannada-regular text-[#222222] mb-2 leading-tight whitespace-pre-line">
+                        <h3 className="text-xl font-kannada-regular text-[#F3EE33] mb-2 leading-tight whitespace-pre-line">
                           {benefit.title}
                         </h3>
-                        <p className="text-[#525252] leading-relaxed font-nunito-light">
+                        <p className="text-white leading-relaxed font-nunito-light">
                           {benefit.description}
                         </p>
                       </div>
@@ -154,6 +136,22 @@ export default function WhyWorkWithUs() {
             ))}
           </div>
         </div>
+
+        {/* Call to Action */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="text-center mt-8"
+        >
+          <p className="text-lg text-[#525252] font-nunito-light mb-4">
+            Ready to experience the difference of working with a trusted partner?
+          </p>
+          <button className="px-8 py-4 bg-[#F3EE33] text-[#222222] rounded-full hover:bg-[#D09229] transition-colors font-kannada-regular text-lg shadow-lg hover:shadow-xl">
+            GET STARTED TODAY
+          </button>
+        </motion.div>
       </div>
     </section>
   );

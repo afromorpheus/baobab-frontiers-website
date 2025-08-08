@@ -20,29 +20,29 @@ const features = [
     title: "QUALITY MAIZE",
     description: "Moisture-tested and aflatoxin-checked for premium standards.",
     iconColor: "text-[#007628]",
-    motifOutline: "/Brand-Motif-Container-Left-Green-Outline.svg",
+    motifOutline: "/Brand-Motif-Container-Left-Green-Outline-White.svg",
     motifFilled: "/Brand-Motif-Container-Left-Green-Filled-Alt.svg",
     motifHover: "/Brand-Motif-Container-Left-Light-Green-Filled.svg",
     image: "/api/placeholder/600/400",
     caption: "Advanced quality testing ensures every batch meets international standards"
   },
   {
-    icon: Users,
-    title: "TRUSTED FARMERS",
-    description: "Reliable suppliers with transparency and fair trade practices.",
+    icon: DollarSign,
+    title: "FAIR PRICING",
+    description: "Right price for quality maize with transparent pricing.",
     iconColor: "text-[#007628]",
-    motifOutline: "/Brand-Motif-Container-Right-Green-Outline.svg",
+    motifOutline: "/Brand-Motif-Container-Right-Green-Outline-White.svg",
     motifFilled: "/Brand-Motif-Container-Right-Green-Filled-Alt.svg",
     motifHover: "/Brand-Motif-Container-Right-Light-Green-Filled.svg",
     image: "/api/placeholder/600/400",
-    caption: "Building lasting partnerships with Ghana's most reliable agricultural communities"
+    caption: "Competitive rates that benefit both buyers and farming communities"
   },
   {
     icon: Clock,
     title: "RELIABLE LOGISTICS",
     description: "Timely pickups, smart storage, and smooth delivery nationwide.",
     iconColor: "text-[#007628]",
-    motifOutline: "/Brand-Motif-Container-Left-Green-Outline.svg",
+    motifOutline: "/Brand-Motif-Container-Left-Green-Outline-White.svg",
     motifFilled: "/Brand-Motif-Container-Left-Green-Filled-Alt.svg",
     motifHover: "/Brand-Motif-Container-Left-Light-Green-Filled.svg",
     image: "/api/placeholder/600/400",
@@ -53,33 +53,22 @@ const features = [
     title: "DATA DRIVEN",
     description: "Market trends and supply insights for informed decisions.",
     iconColor: "text-[#007628]",
-    motifOutline: "/Brand-Motif-Container-Right-Green-Outline.svg",
+    motifOutline: "/Brand-Motif-Container-Right-Green-Outline-White.svg",
     motifFilled: "/Brand-Motif-Container-Right-Green-Filled-Alt.svg",
     motifHover: "/Brand-Motif-Container-Right-Light-Green-Filled.svg",
     image: "/api/placeholder/600/400",
     caption: "Real-time market intelligence drives our sourcing and pricing strategies"
   },
   {
-    icon: DollarSign,
-    title: "FAIR PRICING",
-    description: "Right price for quality maize with transparent pricing.",
+    icon: Users,
+    title: "TRUSTED FARMERS",
+    description: "Reliable suppliers with transparency and fair trade practices.",
     iconColor: "text-[#007628]",
-    motifOutline: "/Brand-Motif-Container-Left-Green-Outline.svg",
+    motifOutline: "/Brand-Motif-Container-Left-Green-Outline-White.svg",
     motifFilled: "/Brand-Motif-Container-Left-Green-Filled-Alt.svg",
     motifHover: "/Brand-Motif-Container-Left-Light-Green-Filled.svg",
     image: "/api/placeholder/600/400",
-    caption: "Competitive rates that benefit both buyers and farming communities"
-  },
-  {
-    icon: Heart,
-    title: "COMMUNITY IMPACT",
-    description: "Supporting local farmers and sustainable development in Ghana.",
-    iconColor: "text-[#007628]",
-    motifOutline: "/Brand-Motif-Container-Right-Green-Outline.svg",
-    motifFilled: "/Brand-Motif-Container-Right-Green-Filled-Alt.svg",
-    motifHover: "/Brand-Motif-Container-Right-Light-Green-Filled.svg",
-    image: "/api/placeholder/600/400",
-    caption: "Empowering rural communities through sustainable agricultural partnerships"
+    caption: "Building lasting partnerships with Ghana's most reliable agricultural communities"
   }
 ];
 
@@ -117,7 +106,7 @@ export default function WhatWeOffer() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           {/* Section Icon */}
           <motion.div
@@ -125,7 +114,7 @@ export default function WhatWeOffer() {
             whileInView={{ scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="mx-auto mb-4 flex justify-center"
+            className="mx-auto mb-8 flex justify-center"
           >
             <img
               src="/Brand-Motif-Asanka-Alt.svg"
@@ -135,12 +124,12 @@ export default function WhatWeOffer() {
           </motion.div>
 
           {/* Section Title */}
-          <h2 className="text-4xl md:text-5xl font-kannada-bold text-[#222222] mb-4">
+          <h2 className="text-4xl md:text-5xl font-kannada-bold text-[#222222] mb-6">
             WHAT WE OFFER
           </h2>
 
           {/* Section Description */}
-          <p className="max-w-3xl mx-auto text-xl text-[#525252] leading-relaxed font-nunito-light">
+          <p className="max-w-2xl mx-auto text-xl text-[#525252] leading-relaxed font-nunito-light">
             We specialize in the aggregation and delivery of yellow maize from Ghana's top growing regions. 
             Whether you're sourcing for livestock feed, grain export, or food processing, we guarantee:
           </p>

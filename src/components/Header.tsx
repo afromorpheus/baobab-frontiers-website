@@ -55,7 +55,7 @@ export default function Header() {
           <div className="flex items-center space-x-3">
             {/* WhatsApp Button - Hidden on mobile */}
             <motion.button 
-              className="hidden sm:flex items-center space-x-2 px-4 py-2 bg-[#007628] text-white rounded-full hover:bg-[#756E33] transition-colors"
+              className="hidden sm:flex items-center space-x-2 px-4 py-2 bg-[#007628] text-white rounded-full hover:bg-[#756E33] transition-colors shadow-lg hover:shadow-xl"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -66,7 +66,7 @@ export default function Header() {
             
             {/* Quote Button */}
             <motion.button 
-              className="flex items-center px-4 py-2 bg-[#F3EE33] text-[#222222] rounded-full hover:bg-[#D09229] transition-colors font-kannada-regular"
+              className="flex items-center px-4 py-2 bg-[#F3EE33] text-[#222222] rounded-full hover:bg-[#D09229] transition-colors font-kannada-regular shadow-lg hover:shadow-xl"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -136,7 +136,7 @@ export default function Header() {
               </a>
               
               {/* Mobile WhatsApp Button */}
-              <button className="w-full flex items-center justify-center space-x-2 px-4 py-3 bg-[#007628] text-white rounded-full hover:bg-[#756E33] transition-colors mt-4">
+              <button className="w-full flex items-center justify-center space-x-2 px-4 py-3 bg-[#007628] text-white rounded-full hover:bg-[#756E33] transition-colors mt-4 shadow-lg hover:shadow-xl">
                 <MessageCircle size={16} />
                 <span className="text-sm font-nunito-light">WHATSAPP US</span>
               </button>
