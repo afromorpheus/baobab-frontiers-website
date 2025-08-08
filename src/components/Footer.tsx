@@ -43,8 +43,8 @@ export default function Footer() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <p className="text-sm font-nunito-light text-[#D09229]">
-              © 2024 Baobab Frontiers. All rights reserved.
+            <p className="text-[#D09229] text-sm">
+              © 2025 Baobab Frontiers. All rights reserved.
             </p>
             <p className="text-sm font-nunito-light text-[#525252]">
               Accra, Ghana
