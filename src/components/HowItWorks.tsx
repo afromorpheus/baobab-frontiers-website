@@ -102,14 +102,14 @@ export default function HowItWorks() {
             className="flex gap-0 px-8 mx-auto max-w-6xl relative" 
             style={{ minHeight: '450px' }}
           >
-            {/* Left Scroll Indicator - Positioned 16px from first card and centered */}
+            {/* Left Scroll Indicator - Positioned 8px from first card and centered with card height */}
             {showScrollIndicators && (
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6 }}
                 className="absolute top-1/2 transform -translate-y-1/2 z-10"
-                style={{ left: '-48px' }}
+                style={{ left: '-40px' }}
               >
                 <div className="flex flex-col items-center space-y-2">
                   <span className="text-sm text-[#525252] font-nunito-light uppercase tracking-wider">Swipe</span>
