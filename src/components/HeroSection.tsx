@@ -26,14 +26,14 @@ export default function HeroSection() {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mx-auto w-52 h-52 flex items-center justify-center"
+            className="mx-auto w-52 h-52 md:h-52 h-26 flex items-center justify-center"
           >
             <Image
               src="/HiRes Corn.svg"
               alt="High Resolution Corn"
               width={208}
               height={208}
-              className="w-52 h-52 drop-shadow-2xl"
+              className="w-52 h-52 md:h-52 h-26 drop-shadow-2xl"
               priority
             />
           </motion.div>
@@ -53,7 +53,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="w-52 md:w-auto md:max-w-[calc(100%-128px)] mx-auto text-xl text-[#525252] leading-relaxed font-nunito-light -mt-0.5"
+            className="w-80 md:w-auto md:max-w-[calc(100%-128px)] mx-auto text-xl text-[#525252] leading-relaxed font-nunito-light -mt-0.5"
           >
             We connect trusted Ghanaian maize producers, aggregators and importers with feed producers, processors, and exporters who need consistent, high-quality yellow maize.
           </motion.p>

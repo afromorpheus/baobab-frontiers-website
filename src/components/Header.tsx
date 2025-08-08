@@ -12,9 +12,9 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo */}
+          {/* Logo - Centered on mobile, left on desktop */}
           <motion.div 
-            className="flex items-center space-x-2"
+            className="flex items-center space-x-2 md:justify-start justify-center flex-1 md:flex-none"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
@@ -26,7 +26,7 @@ export default function Header() {
                 alt="Baobab Frontiers"
                 width={480}
                 height={160}
-                className="h-16 w-auto"
+                className="h-8 md:h-16 w-auto"
                 priority
               />
             </div>
@@ -64,9 +64,9 @@ export default function Header() {
               <span className="text-sm font-nunito-light">WHATSAPP US</span>
             </motion.button>
             
-            {/* Quote Button */}
+            {/* Quote Button - Hidden on mobile */}
             <motion.button 
-              className="flex items-center px-4 py-2 bg-[#F3EE33] text-[#222222] rounded-full hover:bg-[#D09229] transition-colors font-kannada-regular shadow-lg hover:shadow-xl"
+              className="hidden md:flex items-center px-4 py-2 bg-[#F3EE33] text-[#222222] rounded-full hover:bg-[#D09229] transition-colors font-kannada-regular shadow-lg hover:shadow-xl"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
