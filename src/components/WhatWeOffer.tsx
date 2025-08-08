@@ -198,17 +198,6 @@ export default function WhatWeOffer() {
                   </div>
                 </div>
 
-                {/* Progress Indicator - Vertical on right side (Green) */}
-                <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex flex-col space-y-2 z-10">
-                  {features.map((_, index) => (
-                    <div
-                      key={index}
-                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                        activeFeature === index ? 'bg-[#007628] h-6' : 'bg-[#007628]'
-                      }`}
-                    />
-                  ))}
-                </div>
               </div>
             </div>
 
@@ -224,6 +213,18 @@ export default function WhatWeOffer() {
               >
                 {features[activeFeature].description}
               </motion.p>
+              
+              {/* Horizontal Slider Indicator Below Caption */}
+              <div className="flex justify-center space-x-2 mt-4">
+                {features.map((_, index) => (
+                  <div
+                    key={index}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      activeFeature === index ? 'bg-[#007628] w-6' : 'bg-[#007628]'
+                    }`}
+                  />
+                ))}
+              </div>
             </div>
             </motion.div>
           </div>
@@ -237,7 +238,7 @@ export default function WhatWeOffer() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
               viewport={{ once: true }}
-              className="flex flex-wrap justify-center gap-2"
+              className="flex flex-wrap justify-center gap-1"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
