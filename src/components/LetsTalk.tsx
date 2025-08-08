@@ -88,7 +88,7 @@ export default function LetsTalk() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="group relative flex-shrink-0"
-                style={{ width: '300px', marginRight: index < contactMethods.length - 1 ? '-80px' : '0' }}
+                style={{ width: '300px', marginRight: index < contactMethods.length - 1 ? '-120px' : '0' }}
               >
                 {/* Brand Motif Background */}
                 <div className="relative w-full h-96 md:h-80">
@@ -115,17 +115,17 @@ export default function LetsTalk() {
                       </div>
 
                       {/* Title */}
-                      <h3 className="text-lg md:text-base font-kannada-regular text-[#222222] mb-2">
+                      <h3 className="text-[18px] md:text-[16px] font-kannada-regular text-[#222222] mb-2">
                         {method.title}
                       </h3>
 
                       {/* Description */}
-                      <p className="text-sm md:text-xs text-[#525252] font-nunito-light mb-3">
+                      <p className="text-[15px] md:text-[13px] text-[#525252] font-nunito-light mb-3">
                         {method.description}
                       </p>
 
                       {/* Contact Info */}
-                      <p className="text-white font-nunito-light font-medium whitespace-pre-line text-sm md:text-xs">
+                      <p className="text-white font-nunito-light font-medium whitespace-pre-line text-[15px] md:text-[13px]">
                         {method.contact}
                       </p>
                     </div>
