@@ -82,7 +82,7 @@ export default function WhyWorkWithUs() {
         {/* Benefits Slider */}
         <div className="relative w-full">
           {/* Slider Container */}
-          <div className="flex overflow-x-auto scrollbar-hide gap-0 py-10 px-4 pl-24" style={{ minHeight: '450px' }}>
+          <div className="flex overflow-x-auto scrollbar-hide gap-[5px] py-10 px-4 pl-24" style={{ minHeight: '450px' }}>
             {/* Spacer to prevent first card truncation */}
             <div className="flex-shrink-0 w-8"></div>
             
@@ -94,7 +94,7 @@ export default function WhyWorkWithUs() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="group relative flex-shrink-0"
-                style={{ width: '544px', marginRight: '-120px' }}
+                style={{ width: '544px' }}
               >
                 {/* Card Container */}
                 <div className="relative w-full h-80">
