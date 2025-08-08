@@ -98,20 +98,20 @@ export default function WhyWorkWithUs() {
 
         {/* Benefits Slider */}
         <div className="relative w-full">
-          {/* Left Scroll Indicator */}
+          {/* Left Scroll Indicator - Positioned outside content area */}
           {showScrollIndicators && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6 }}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10"
+              className="absolute -left-16 top-1/2 transform -translate-y-1/2 z-10"
             >
               <div className="flex flex-col items-center space-y-2">
-                <span className="text-sm text-[#525252] font-nunito-light uppercase">Scroll</span>
-                <div className="w-6 h-10 border-2 border-[#525252] rounded-full flex justify-center">
+                <span className="text-sm text-[#525252] font-nunito-light uppercase tracking-wider">Scroll</span>
+                <div className="w-6 h-10 border-2 border-[#525252] rounded-full flex justify-center relative overflow-hidden">
                   <motion.div
-                    animate={{ x: [-2, 2, -2] }}
-                    transition={{ duration: 2, repeat: Infinity }}
+                    animate={{ y: [0, 12, 0] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                     className="w-1 h-3 bg-[#007628] rounded-full mt-2"
                   ></motion.div>
                 </div>
@@ -119,10 +119,10 @@ export default function WhyWorkWithUs() {
             </motion.div>
           )}
 
-          {/* Slider Container */}
+          {/* Slider Container - Centered with proper spacing */}
           <div 
             ref={sliderRef}
-            className="flex overflow-x-auto scrollbar-hide gap-0 py-10 px-4 pl-24" 
+            className="flex overflow-x-auto scrollbar-hide gap-0 py-10 px-8 mx-auto max-w-6xl" 
             style={{ minHeight: '450px' }}
           >
             {/* Spacer to prevent first card truncation */}
