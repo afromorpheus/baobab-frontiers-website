@@ -117,8 +117,8 @@ export default function WhatWeOffer() {
             className="mx-auto mb-8 flex justify-center"
           >
             <img
-              src="/Brand-Motif-Asanka-Alt.svg"
-              alt="Asanka Brand Motif"
+              src="/Brand-Motif-Tapoli-Coloured.svg"
+              alt="Tapoli Coloured Brand Motif"
               className="h-24 w-auto opacity-100"
             />
           </motion.div>
