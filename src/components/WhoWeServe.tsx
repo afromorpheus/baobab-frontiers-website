@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Building2, Factory, Ship, Users, Globe, ShoppingCart } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -8,10 +8,52 @@ export default function WhoWeServe() {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [activeCustomer, setActiveCustomer] = useState(0);
 
-  // Handle customer selection
+  // Handle customer selection and scroll to that customer
   const handleCustomerSelect = (index: number) => {
     setActiveCustomer(index);
+    
+    if (sliderRef.current) {
+      const container = sliderRef.current;
+      const cardWidth = 544; // Width of each card
+      const cardMargin = -160; // Negative margin between cards
+      
+      // Calculate scroll position: (card width + margin) * index
+      const scrollPosition = (cardWidth + cardMargin) * index;
+      
+      container.scrollTo({
+        left: scrollPosition,
+        behavior: 'smooth'
+      });
+    }
   };
+
+  // Handle scroll events to update active customer
+  useEffect(() => {
+    const handleScroll = () => {
+      if (sliderRef.current) {
+        const container = sliderRef.current;
+        const scrollLeft = container.scrollLeft;
+        const cardWidth = 544;
+        const cardMargin = -160;
+        
+        // Calculate which customer is most visible
+        const customerIndex = Math.round(scrollLeft / (cardWidth + cardMargin));
+        
+        // Ensure index is within bounds
+        const clampedIndex = Math.max(0, Math.min(customerIndex, customers.length - 1));
+        
+        if (clampedIndex !== activeCustomer) {
+          setActiveCustomer(clampedIndex);
+        }
+      }
+    };
+
+    const container = sliderRef.current;
+    if (container) {
+      container.addEventListener('scroll', handleScroll);
+      return () => container.removeEventListener('scroll', handleScroll);
+    }
+  }, [activeCustomer]);
 
 const customers = [
   {

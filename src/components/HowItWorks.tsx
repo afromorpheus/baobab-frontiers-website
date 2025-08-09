@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Search, 
@@ -44,10 +44,50 @@ export default function HowItWorks() {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [activeStep, setActiveStep] = useState(0);
 
-  // Handle step selection
+  // Handle step selection and scroll to that step
   const handleStepSelect = (index: number) => {
+    console.log('Clicking step:', index);
     setActiveStep(index);
+    
+    if (sliderRef.current) {
+      const container = sliderRef.current;
+      const cardWidth = 320; // Width of each card
+      
+      // Calculate scroll position: card width * index
+      const scrollPosition = cardWidth * index;
+      console.log('Scrolling to position:', scrollPosition);
+      
+      container.scrollTo({
+        left: scrollPosition,
+        behavior: 'smooth'
+      });
+    }
   };
+
+  // Handle scroll events to update active step
+  useEffect(() => {
+    const handleScroll = () => {
+      if (sliderRef.current) {
+        const container = sliderRef.current;
+        const scrollLeft = container.scrollLeft;
+        const cardWidth = 320;
+        
+        // Calculate which step is most visible
+        const currentStep = Math.round(scrollLeft / cardWidth);
+        console.log('Scroll position:', scrollLeft, 'Current step:', currentStep);
+        
+        if (currentStep !== activeStep && currentStep >= 0 && currentStep < steps.length) {
+          setActiveStep(currentStep);
+        }
+      }
+    };
+
+    const container = sliderRef.current;
+    if (container) {
+      container.addEventListener('scroll', handleScroll);
+      return () => container.removeEventListener('scroll', handleScroll);
+    }
+  }, [activeStep, steps.length]);
 
   return (
     <section id="how-it-works" className="py-12 bg-[#D9EAD3]">
@@ -91,14 +131,12 @@ export default function HowItWorks() {
           {/* Cards Container - Centered with proper spacing */}
           <div 
             ref={sliderRef}
-            className="flex gap-0 px-8 mx-auto max-w-6xl relative" 
-            style={{ minHeight: '380px' }}
+            className="flex gap-0 px-8 relative" 
+            style={{ 
+              minHeight: '380px',
+              width: `${steps.length * 320}px` // Full width for all cards
+            }}
           >
-
-
-            {/* Spacer for 32px before first card */}
-            <div className="flex-shrink-0 w-8"></div>
-
             {steps.map((step, index) => (
             <motion.div
               key={index}
@@ -107,7 +145,7 @@ export default function HowItWorks() {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
                 className="flex-shrink-0 relative"
-                style={{ width: '320px', marginRight: '-40px' }}
+                style={{ width: '320px' }}
               >
                 {/* Card Background */}
                 <div className="relative h-72 w-full">
