@@ -79,14 +79,14 @@ const customers = [
 
         {/* Cards Container - Full Width */}
         <div className="relative w-full">
-          {/* Left Scroll Indicator - Positioned outside content area */}
+          {/* Left Scroll Indicator - Positioned 8px to the left of first card */}
           {showScrollIndicators && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6 }}
               className="absolute top-1/2 transform -translate-y-1/2 z-10"
-              style={{ left: '-64px' }}
+              style={{ left: '-40px' }}
             >
               <div className="flex flex-col items-center space-y-2">
                 <span className="text-sm text-[#525252] font-nunito-light uppercase tracking-wider">Swipe</span>

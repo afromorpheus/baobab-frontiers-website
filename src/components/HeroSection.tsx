@@ -19,21 +19,21 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="space-y-2 md:space-y-4 -mt-32 md:mt-0"
+          className="space-y-2 md:space-y-4 -mt-48 md:mt-0"
         >
           {/* Central Icon - High Res Corn */}
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mx-auto w-24 h-24 md:w-52 md:h-52 flex items-center justify-center"
+            className="mx-auto w-4 h-4 md:w-4 md:h-4 flex items-center justify-center"
           >
             <Image
               src="/HiRes Corn.svg"
               alt="High Resolution Corn"
-              width={208}
-              height={208}
-              className="w-24 h-24 md:w-52 md:h-52 drop-shadow-2xl"
+              width={16}
+              height={16}
+              className="w-4 h-4 md:w-4 md:h-4 drop-shadow-2xl"
               priority
             />
           </motion.div>

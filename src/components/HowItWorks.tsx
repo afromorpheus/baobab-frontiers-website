@@ -102,7 +102,7 @@ export default function HowItWorks() {
             className="flex gap-0 px-8 mx-auto max-w-6xl relative" 
             style={{ minHeight: '450px' }}
           >
-            {/* Left Scroll Indicator - Positioned 8px from first card and centered with card height */}
+            {/* Left Scroll Indicator - Positioned 8px to the left of first card */}
             {showScrollIndicators && (
               <motion.div
                 initial={{ opacity: 0 }}
@@ -110,7 +110,7 @@ export default function HowItWorks() {
                 transition={{ duration: 0.6 }}
                 className="absolute z-10"
                 style={{ 
-                  left: '-48px',
+                  left: '-40px',
                   top: '50%',
                   transform: 'translateY(-50%)'
                 }}
