@@ -58,8 +58,8 @@ const customers = [
         {/* Section Header */}
         <div className="flex flex-col items-center mb-8">
           <img
-            src="/Brand-Motif-Tapoli-New.svg"
-            alt="Tapoli Brand Motif"
+            src="/Brand-Motif-Ahoden-Alt.svg"
+            alt="Ahoden Brand Motif"
             className="h-20 w-auto mb-6"
           />
           <h2 className="text-4xl md:text-5xl font-kannada-bold text-[#222222] mb-6">WHO WE SERVE</h2>
