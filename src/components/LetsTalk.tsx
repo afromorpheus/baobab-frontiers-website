@@ -146,7 +146,7 @@ export default function LetsTalk() {
         </div>
 
         {/* Simple Pagination Dots - Clean and Modern */}
-        <div className="flex justify-center space-x-3 mt-4 mb-6">
+        <div className="flex justify-center space-x-3 mt-0.5 mb-6">
           {contactMethods.map((_, index) => (
             <motion.button
               key={index}
@@ -180,8 +180,8 @@ export default function LetsTalk() {
               SOURCE MAIZE FROM US
             </h3>
             
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <form className="space-y-2">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 <div>
                   <label className="block text-sm font-nunito-light text-[#525252] mb-2">NAME</label>
                   <input 
@@ -218,7 +218,7 @@ export default function LetsTalk() {
                 />
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 <div>
                   <label className="block text-sm font-nunito-light text-[#525252] mb-2">QUANTITY</label>
                   <input 

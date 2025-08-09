@@ -150,7 +150,7 @@ export default function WhyWorkWithUs() {
         </div>
 
         {/* Simple Pagination Dots - Clean and Modern */}
-        <div className="flex justify-center space-x-3 mt-16">
+        <div className="flex justify-center space-x-3 -mt-1">
           {benefits.map((_, index) => (
             <motion.button
               key={index}
