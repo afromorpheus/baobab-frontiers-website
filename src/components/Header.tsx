@@ -53,9 +53,9 @@ export default function Header() {
 
           {/* Call to Action Button & Mobile Menu Toggle */}
           <div className="flex items-center space-x-3">
-            {/* Buy Maize Button - Visible on all devices */}
+            {/* Buy Maize Button - Hidden on mobile, visible on desktop */}
             <motion.button 
-              className="flex items-center px-4 py-2 bg-[#F3EE33] text-[#222222] rounded-full hover:bg-[#D09229] transition-colors shadow-lg hover:shadow-xl font-kannada-regular"
+              className="hidden md:flex items-center px-4 py-2 bg-[#007628] text-white rounded-full hover:bg-[#756E33] transition-colors shadow-lg hover:shadow-xl font-kannada-regular"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}

@@ -119,7 +119,7 @@ export default function WhatWeOffer() {
             <img
               src="/Brand-Motif-Asanka-Alt.svg"
               alt="Asanka Brand Motif"
-              className="h-24 w-auto opacity-60"
+              className="h-24 w-auto opacity-100"
             />
           </motion.div>
 
