@@ -293,8 +293,44 @@ export default function WhatWeOffer() {
                             className="w-full h-full object-contain"
                           />
                         </div>
+                      ) : activeFeature === 1 ? (
+                        /* Fair Pricing - Mask group (3).svg */
+                        <div className="w-full h-full relative">
+                          <img
+                            src="/Mask group (3).svg"
+                            alt="Fair Pricing"
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
+                      ) : activeFeature === 2 ? (
+                        /* Reliable Logistics - Mask group (4).svg */
+                        <div className="w-full h-full relative">
+                          <img
+                            src="/Mask group (4).svg"
+                            alt="Reliable Logistics"
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
+                      ) : activeFeature === 3 ? (
+                        /* Data Driven - Mask group (5).svg */
+                        <div className="w-full h-full relative">
+                          <img
+                            src="/Mask group (5).svg"
+                            alt="Data Driven"
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
+                      ) : activeFeature === 4 ? (
+                        /* Trusted Farmers - Mask group (6).svg */
+                        <div className="w-full h-full relative">
+                          <img
+                            src="/Mask group (6).svg"
+                            alt="Trusted Farmers"
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
                       ) : (
-                        /* Other features - Placeholder */
+                        /* Fallback */
                         <div className="text-center">
                           {(() => {
                             const IconComponent = features[activeFeature].icon;
@@ -302,7 +338,7 @@ export default function WhatWeOffer() {
                           })()}
                           <h3 className="text-2xl font-kannada-bold text-white mb-2">
                             {features[activeFeature].title}
-                </h3>
+                          </h3>
                           <p className="text-white/80 font-nunito-light">
                             IMAGE - {features[activeFeature].title}
                           </p>
