@@ -117,8 +117,8 @@ export default function WhatWeOffer() {
             className="mx-auto mb-8 flex justify-center"
           >
             <img
-              src="/Brand-Motif-Ahoden-Coloured.svg"
-              alt="Ahoden Coloured Brand Motif"
+              src="/Brand-Motif-Maize-Kernels.svg"
+              alt="Maize Kernels Brand Motif"
               className="h-24 w-auto opacity-100"
             />
           </motion.div>
