@@ -328,16 +328,36 @@ export default function WhatWeOffer() {
                 {features[activeFeature].description}
               </motion.p>
               
-              {/* Horizontal Slider Indicator Below Caption */}
-              <div className="flex justify-center space-x-2 mt-4">
-                {features.map((_, index) => (
-                  <div
-                    key={index}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                      activeFeature === index ? 'bg-[#007628] w-6' : 'bg-[#007628]'
-                    }`}
-                  />
-                ))}
+              {/* Swipe Indicators - Positioned on red line, 4px left of first card */}
+              <div className="relative w-full">
+                <div className="flex space-x-2" style={{ 
+                  position: 'absolute',
+                  left: '4px',
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  zIndex: 10
+                }}>
+                  {features.map((_, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
+                      viewport={{ once: true }}
+                      className={`w-3 h-3 rounded-full border transition-all duration-300 hover:scale-110 cursor-pointer ${
+                        activeFeature === index 
+                          ? 'bg-[#007628] border-[#007628] shadow-lg' 
+                          : 'bg-[#007628]/30 border-[#007628]/50'
+                      }`}
+                      style={{
+                        boxShadow: activeFeature === index 
+                          ? '0 4px 8px rgba(0, 118, 40, 0.3)' 
+                          : '0 2px 4px rgba(0, 118, 40, 0.2)'
+                      }}
+                      onClick={() => handleFeatureSelect(index)}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
             </motion.div>

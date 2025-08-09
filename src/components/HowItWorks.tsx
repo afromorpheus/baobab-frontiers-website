@@ -178,6 +178,31 @@ export default function HowItWorks() {
           </div>
         </div>
 
+        {/* Swipe Indicators - Positioned on red line, 4px left of first card */}
+        <div className="relative w-full max-w-6xl mx-auto px-8">
+          <div className="flex space-x-2" style={{ 
+            position: 'absolute',
+            left: '4px',
+            top: '50%',
+            transform: 'translateY(-50%)',
+            zIndex: 10
+          }}>
+            {steps.map((_, index) => (
+              <motion.div
+                key={index}
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
+                viewport={{ once: true }}
+                className="w-3 h-3 rounded-full bg-[#007628]/30 border border-[#007628]/50 transition-all duration-300 hover:bg-[#007628]/50 cursor-pointer"
+                style={{
+                  boxShadow: '0 2px 4px rgba(0, 118, 40, 0.2)'
+                }}
+              />
+            ))}
+          </div>
+        </div>
+
         {/* Call to Action */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
