@@ -126,8 +126,8 @@ export default function WhyWorkWithUs() {
             className="mx-auto mb-6 flex justify-center"
           >
             <img
-              src="/Brand-Motif-Asanka-Alt.svg"
-              alt="Asanka Brand Motif"
+              src="/Brand-Motif-Ahoden-New.svg"
+              alt="Ahoden Brand Motif"
               className="h-24 w-auto"
             />
           </motion.div>
