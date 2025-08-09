@@ -145,41 +145,24 @@ export default function LetsTalk() {
           </div>
         </div>
 
-        {/* Brand Motif Swipe Indicators - Bottom Center */}
-        <div className="flex justify-center space-x-3 mt-4">
+        {/* Simple Pagination Dots - Clean and Modern */}
+        <div className="flex justify-center space-x-3 mt-4 mb-6">
           {contactMethods.map((_, index) => (
             <motion.button
               key={index}
               onClick={() => handleContactMethodSelect(index)}
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
               viewport={{ once: true }}
-              className={`group transition-all duration-500 ease-out cursor-pointer ${
-                activeContactMethod === index 
-                  ? 'scale-125' 
-                  : 'scale-100 hover:scale-110'
-              }`}
+              className="group transition-all duration-300 cursor-pointer"
               aria-label={`Go to contact method ${index + 1}`}
             >
-              {/* Brand Motif Dot - Inspired by maize kernel shape */}
-              <div className={`relative transition-all duration-500 ${
+              <div className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 activeContactMethod === index 
-                  ? 'w-6 h-6' 
-                  : 'w-4 h-4'
-              }`}>
-                {/* Active state - filled maize kernel */}
-                {activeContactMethod === index ? (
-                  <div className="w-full h-full bg-gradient-to-br from-[#D9B229] to-[#876E19] rounded-full shadow-lg transform rotate-45 scale-110">
-                    <div className="absolute inset-1 bg-gradient-to-br from-[#FFD330] to-[#D9B229] rounded-full"></div>
-                  </div>
-                ) : (
-                  /* Inactive state - outlined maize kernel */
-                  <div className="w-full h-full border-2 border-[#876E19] rounded-full bg-white/80 hover:bg-[#876E19]/10 transition-colors duration-300">
-                    <div className="absolute inset-1 border border-[#876E19] rounded-full"></div>
-                  </div>
-                )}
-              </div>
+                  ? 'bg-[#876E19] shadow-md' 
+                  : 'bg-[#F5F5DC] hover:bg-[#F5F5DC]/80'
+              }`}></div>
             </motion.button>
           ))}
         </div>
@@ -223,6 +206,15 @@ export default function LetsTalk() {
                   type="text" 
                   className="w-full px-4 py-3 border border-[#D09229]/30 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#007628] focus:border-transparent font-nunito-light bg-white"
                   placeholder="Your company name"
+                />
+              </div>
+              
+              <div>
+                <label className="block text-sm font-nunito-light text-[#525252] mb-2">CONTACT NUMBER</label>
+                <input 
+                  type="tel" 
+                  className="w-full px-4 py-3 border border-[#D09229]/30 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#007628] focus:border-transparent font-nunito-light bg-white"
+                  placeholder="Your phone number"
                 />
               </div>
               
@@ -278,13 +270,7 @@ export default function LetsTalk() {
           </div>
         </motion.div>
 
-        {/* Scroll Indicator */}
-        <div className="flex justify-center mt-12">
-          <div className="flex flex-col items-center space-y-2">
-            <span className="text-xs text-[#D09229] font-nunito-light">Scroll</span>
-            <div className="w-0.5 h-6 bg-[#D09229]"></div>
-          </div>
-        </div>
+
       </div>
     </section>
   );

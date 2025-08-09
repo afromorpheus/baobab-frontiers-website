@@ -337,16 +337,11 @@ export default function WhatWeOffer() {
                     whileInView={{ scale: 1 }}
                     transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
                     viewport={{ once: true }}
-                    className={`w-3 h-3 rounded-full border transition-all duration-300 hover:scale-110 cursor-pointer ${
+                    className={`w-3 h-3 rounded-full transition-all duration-300 hover:scale-110 cursor-pointer ${
                       activeFeature === index 
-                        ? 'bg-[#007628] border-[#007628] shadow-lg' 
-                        : 'bg-[#007628]/30 border-[#007628]/50'
+                        ? 'bg-[#007628] shadow-md' 
+                        : 'bg-[#A3FF95] hover:bg-[#876E19]'
                     }`}
-                    style={{
-                      boxShadow: activeFeature === index 
-                        ? '0 4px 8px rgba(0, 118, 40, 0.3)' 
-                        : '0 2px 4px rgba(0, 118, 40, 0.2)'
-                    }}
                     onClick={() => handleFeatureSelect(index)}
                   />
                 ))}
@@ -373,19 +368,7 @@ export default function WhatWeOffer() {
           </motion.button>
         </motion.div>
 
-        {/* Scroll Indicator - Positioned below CTA */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mt-8"
-        >
-          <div className="flex flex-col items-center space-y-2">
-            <span className="text-xs text-[#007628] font-nunito-light">Scroll</span>
-            <div className="w-1 h-6 bg-[#007628] rounded-full"></div>
-          </div>
-        </motion.div>
+
       </div>
     </section>
   );

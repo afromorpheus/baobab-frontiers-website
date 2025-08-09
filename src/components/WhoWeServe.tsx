@@ -1,31 +1,17 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { Building2, Factory, Ship, Users, Globe, ShoppingCart } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function WhoWeServe() {
   const sliderRef = useRef<HTMLDivElement>(null);
-  const [showScrollIndicators, setShowScrollIndicators] = useState(true);
   const [activeCustomer, setActiveCustomer] = useState(0);
 
   // Handle customer selection
   const handleCustomerSelect = (index: number) => {
     setActiveCustomer(index);
   };
-
-  // Hide scroll indicators when scrolling
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollIndicators(false);
-    };
-
-    const slider = sliderRef.current;
-    if (slider) {
-      slider.addEventListener('scroll', handleScroll);
-      return () => slider.removeEventListener('scroll', handleScroll);
-    }
-  }, []);
 
 const customers = [
   {
@@ -67,14 +53,14 @@ const customers = [
   ];
 
   return (
-    <section id="customer" className="relative w-full bg-[#D09229]/20 py-12">
+    <section id="customer" className="relative w-full bg-[#D09229]/20 py-8">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="flex flex-col items-center mb-12">
+        <div className="flex flex-col items-center mb-8">
           <img
             src="/Brand-Motif-Tapoli-New.svg"
             alt="Tapoli Brand Motif"
-            className="h-24 w-auto mb-8"
+            className="h-20 w-auto mb-6"
           />
           <h2 className="text-4xl md:text-5xl font-kannada-bold text-[#222222] mb-6">WHO WE SERVE</h2>
           <p className="text-xl text-[#525252] max-w-2xl text-center leading-relaxed font-nunito-light">
@@ -85,31 +71,12 @@ const customers = [
 
         {/* Cards Container - Full Width */}
         <div className="relative w-full">
-          {/* Left Scroll Indicator - Positioned 8px inside carousel container */}
-          {showScrollIndicators && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6 }}
-              className="absolute top-1/2 transform -translate-y-1/2 z-10"
-              style={{ left: '8px' }}
-            >
-              <div className="flex flex-col items-center space-y-2">
-                <div className="w-6 h-10 border-2 border-[#525252] rounded-full flex justify-center">
-                  <motion.div
-                    animate={{ x: [-2, 2, -2] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="w-1 h-3 bg-[#007628] rounded-full mt-2"
-                  ></motion.div>
-                </div>
-              </div>
-            </motion.div>
-          )}
+
 
           {/* Slider Container - Centered with proper spacing */}
           <div 
             ref={sliderRef}
-            className="flex overflow-x-auto scrollbar-hide gap-0 py-10 pb-16 px-8 mx-auto max-w-6xl"
+            className="flex overflow-x-auto scrollbar-hide gap-0 py-6 pb-12 px-8 mx-auto max-w-6xl"
             style={{ minHeight: '360px' }}
           >
           {customers.map((customer, index) => (
@@ -159,56 +126,30 @@ const customers = [
           </div>
         </div>
 
-        {/* Brand Motif Swipe Indicators - Clickable and positioned on red line */}
-        <div className="relative w-full max-w-6xl mx-auto px-8">
-          <div className="flex space-x-3" style={{ 
-            position: 'absolute',
-            left: '4px',
-            top: '50%',
-            transform: 'translateY(-50%)',
-            zIndex: 10
-          }}>
-            {customers.map((_, index) => (
-              <motion.button
-                key={index}
-                onClick={() => handleCustomerSelect(index)}
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
-                viewport={{ once: true }}
-                className={`group transition-all duration-500 ease-out cursor-pointer ${
-                  activeCustomer === index 
-                    ? 'scale-125' 
-                    : 'scale-100 hover:scale-110'
-                }`}
-                aria-label={`Go to customer ${index + 1}`}
-              >
-                {/* Brand Motif Dot - Inspired by organic theme */}
-                <div className={`relative transition-all duration-500 ${
-                  activeCustomer === index 
-                    ? 'w-6 h-6' 
-                    : 'w-4 h-4'
-                }`}>
-                  {/* Active state - filled organic motif */}
-                  {activeCustomer === index ? (
-                    <div className="w-full h-full bg-gradient-to-br from-[#876E19] to-[#D9B229] rounded-full shadow-lg">
-                      <div className="absolute inset-1 bg-gradient-to-br from-[#F3EE33] to-[#876E19] rounded-full"></div>
-                      <div className="absolute inset-2 bg-gradient-to-br from-[#A3FF95] to-[#F3EE33] rounded-full opacity-80"></div>
-                    </div>
-                  ) : (
-                    /* Inactive state - outlined organic motif */
-                    <div className="w-full h-full border-2 border-[#876E19] rounded-full bg-white/80 hover:bg-[#876E19]/10 transition-colors duration-300">
-                      <div className="absolute inset-1 border border-[#876E19] rounded-full"></div>
-                    </div>
-                  )}
-                </div>
-              </motion.button>
-            ))}
-          </div>
+        {/* Simple Pagination Dots - Clean and Modern */}
+        <div className="flex justify-center space-x-1 -mt-2">
+          {customers.map((_, index) => (
+            <motion.button
+              key={index}
+              onClick={() => handleCustomerSelect(index)}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
+              viewport={{ once: true }}
+              className="group transition-all duration-300 cursor-pointer"
+              aria-label={`Go to customer ${index + 1}`}
+            >
+              <div className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                activeCustomer === index 
+                  ? 'bg-[#222222] shadow-md' 
+                  : 'bg-[#F3EE33] hover:bg-[#F3EE33]/80'
+              }`}></div>
+            </motion.button>
+          ))}
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-16">
+        <div className="text-center mt-12">
           <h3 className="text-lg text-[#525252] font-nunito-light mb-8">
             Ready to source quality yellow maize for your business?
           </h3>
@@ -217,19 +158,7 @@ const customers = [
           </button>
         </div>
 
-        {/* Scroll Indicator - Positioned below CTA */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mt-8"
-        >
-          <div className="flex flex-col items-center space-y-2">
-            <span className="text-xs text-[#007628] font-nunito-light">Scroll</span>
-            <div className="w-1 h-6 bg-[#007628] rounded-full"></div>
-          </div>
-        </motion.div>
+
       </div>
     </section>
   );

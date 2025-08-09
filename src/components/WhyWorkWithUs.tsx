@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Award, 
@@ -44,7 +44,6 @@ const benefits = [
 
 export default function WhyWorkWithUs() {
   const sliderRef = useRef<HTMLDivElement>(null);
-  const [showScrollIndicators, setShowScrollIndicators] = useState(true);
   const [activeBenefit, setActiveBenefit] = useState(0);
 
   // Handle benefit selection
@@ -52,28 +51,15 @@ export default function WhyWorkWithUs() {
     setActiveBenefit(index);
   };
 
-  // Hide scroll indicators when scrolling
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollIndicators(false);
-    };
-
-    const slider = sliderRef.current;
-    if (slider) {
-      slider.addEventListener('scroll', handleScroll);
-      return () => slider.removeEventListener('scroll', handleScroll);
-    }
-  }, []);
-
   return (
-    <section id="why-work-with-us" className="py-20 bg-[#F3EE33]/20">
+    <section id="why-work-with-us" className="py-12 bg-[#F3EE33]/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-8"
         >
           {/* Section Icon */}
           <motion.div
@@ -81,7 +67,7 @@ export default function WhyWorkWithUs() {
             whileInView={{ scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="mx-auto mb-8 flex justify-center"
+            className="mx-auto mb-6 flex justify-center"
           >
             <img
               src="/Brand-Motif-Asanka-Alt.svg"
@@ -91,7 +77,7 @@ export default function WhyWorkWithUs() {
           </motion.div>
 
           {/* Section Title */}
-          <h2 className="text-4xl md:text-5xl font-kannada-bold text-[#222222] mb-6">
+          <h2 className="text-4xl md:text-5xl font-kannada-bold text-[#222222] mb-4">
             WHY WORK WITH US
           </h2>
 
@@ -104,31 +90,12 @@ export default function WhyWorkWithUs() {
 
         {/* Benefits Slider */}
         <div className="relative w-full">
-          {/* Left Scroll Indicator - Positioned 8px inside carousel container */}
-          {showScrollIndicators && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6 }}
-              className="absolute top-1/2 transform -translate-y-1/2 z-10"
-              style={{ left: '8px' }}
-            >
-              <div className="flex flex-col items-center space-y-2">
-                <div className="w-6 h-10 border-2 border-[#525252] rounded-full flex justify-center relative overflow-hidden">
-                  <motion.div
-                    animate={{ y: [0, 12, 0] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                    className="w-1 h-3 bg-[#007628] rounded-full mt-2"
-                  ></motion.div>
-                </div>
-              </div>
-            </motion.div>
-          )}
+
 
           {/* Slider Container - Centered with proper spacing */}
           <div 
             ref={sliderRef}
-            className="flex overflow-x-auto scrollbar-hide gap-0 py-10 px-8 mx-auto max-w-6xl" 
+            className="flex overflow-x-auto scrollbar-hide gap-0 py-6 px-8 mx-auto max-w-6xl" 
             style={{ minHeight: '450px' }}
           >
             {benefits.map((benefit, index) => (
@@ -182,42 +149,24 @@ export default function WhyWorkWithUs() {
           </div>
         </div>
 
-        {/* Brand Motif Swipe Indicators - Bottom Center */}
-        <div className="flex justify-center space-x-3 mt-4">
+        {/* Simple Pagination Dots - Clean and Modern */}
+        <div className="flex justify-center space-x-3 mt-16">
           {benefits.map((_, index) => (
             <motion.button
               key={index}
               onClick={() => handleBenefitSelect(index)}
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
               viewport={{ once: true }}
-              className={`group transition-all duration-500 ease-out cursor-pointer ${
-                activeBenefit === index 
-                  ? 'scale-125' 
-                  : 'scale-100 hover:scale-110'
-              }`}
+              className="group transition-all duration-300 cursor-pointer"
               aria-label={`Go to benefit ${index + 1}`}
             >
-              {/* Brand Motif Dot - Inspired by yellow maize theme */}
-              <div className={`relative transition-all duration-500 ${
+              <div className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 activeBenefit === index 
-                  ? 'w-6 h-6' 
-                  : 'w-4 h-4'
-              }`}>
-                {/* Active state - filled yellow maize motif */}
-                {activeBenefit === index ? (
-                  <div className="w-full h-full bg-gradient-to-br from-[#F3EE33] to-[#D9B229] rounded-full shadow-lg transform rotate-45 scale-110">
-                    <div className="absolute inset-1 bg-gradient-to-br from-[#FFD330] to-[#F3EE33] rounded-full"></div>
-                    <div className="absolute inset-2 bg-gradient-to-br from-[#876E19] to-[#D9B229] rounded-full opacity-60"></div>
-                  </div>
-                ) : (
-                  /* Inactive state - outlined yellow maize motif */
-                  <div className="w-full h-full border-2 border-[#876E19] rounded-full bg-white/80 hover:bg-[#876E19]/10 transition-colors duration-300">
-                    <div className="absolute inset-1 border border-[#876E19] rounded-full"></div>
-                  </div>
-                )}
-              </div>
+                  ? 'bg-[#876E19] shadow-md' 
+                  : 'bg-[#F3EE33] hover:bg-[#F3EE33]/80'
+              }`}></div>
             </motion.button>
           ))}
         </div>
@@ -228,7 +177,7 @@ export default function WhyWorkWithUs() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
-          className="text-center mt-8"
+          className="text-center mt-6"
         >
           <p className="text-lg text-[#525252] font-nunito-light mb-4">
             Ready to experience the difference of working with a trusted partner?
@@ -238,13 +187,7 @@ export default function WhyWorkWithUs() {
           </button>
         </motion.div>
 
-        {/* Scroll Indicator */}
-        <div className="flex justify-center mt-12">
-          <div className="flex flex-col items-center space-y-2">
-            <span className="text-xs text-[#876E19] font-nunito-light">Scroll</span>
-            <div className="w-0.5 h-6 bg-[#876E19]"></div>
-          </div>
-        </div>
+
       </div>
     </section>
   );

@@ -77,18 +77,22 @@ export default function HeroSection() {
           </motion.div>
         </motion.div>
 
-        {/* Simple Scroll Indicator */}
+        {/* Oval Scroll Indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1.2 }}
-          className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 z-10"
+          transition={{ duration: 0.8, delay: 1.2 }}
+          className="absolute -bottom-24 left-1/2 transform -translate-x-1/2"
         >
-          <div className="flex flex-col items-center space-y-2">
-            <span className="text-xs text-[#007628] font-nunito-light">Scroll</span>
-            <div className="w-1 h-6 bg-[#007628] rounded-full"></div>
+          <div className="w-6 h-10 border-2 border-[#007628] rounded-full flex justify-center items-start pt-1.5 bg-transparent">
+            <motion.div
+              animate={{ y: [0, 6, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              className="w-0.5 h-1.5 bg-[#007628] rounded-full"
+            ></motion.div>
           </div>
         </motion.div>
+
       </div>
     </section>
   );
