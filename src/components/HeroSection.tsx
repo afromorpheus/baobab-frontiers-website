@@ -77,22 +77,16 @@ export default function HeroSection() {
           </motion.div>
         </motion.div>
 
-        {/* Scroll Indicator - Fixed visibility issue */}
+        {/* Simple Scroll Indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 1.2 }}
-          className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 z-10"
+          className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 z-10"
         >
           <div className="flex flex-col items-center space-y-2">
-            <span className="text-sm text-[#525252] font-nunito-light uppercase">Scroll to explore</span>
-            <div className="w-6 h-10 border-2 border-[#525252] rounded-full flex justify-center">
-              <motion.div
-                animate={{ y: [0, 12, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="w-1 h-3 bg-[#007628] rounded-full mt-2"
-              ></motion.div>
-            </div>
+            <span className="text-xs text-[#007628] font-nunito-light">Scroll</span>
+            <div className="w-1 h-6 bg-[#007628] rounded-full"></div>
           </div>
         </motion.div>
       </div>

@@ -140,6 +140,14 @@ export default function SupportingLocalAgriculture() {
             </p>
           </div>
         </motion.div>
+
+        {/* Scroll Indicator */}
+        <div className="flex justify-center mt-12">
+          <div className="flex flex-col items-center space-y-2">
+            <span className="text-xs text-[#007628] font-nunito-light">Scroll</span>
+            <div className="w-0.5 h-6 bg-[#007628]"></div>
+          </div>
+        </div>
       </div>
     </section>
   );

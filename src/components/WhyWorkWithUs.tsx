@@ -45,6 +45,12 @@ const benefits = [
 export default function WhyWorkWithUs() {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [showScrollIndicators, setShowScrollIndicators] = useState(true);
+  const [activeBenefit, setActiveBenefit] = useState(0);
+
+  // Handle benefit selection
+  const handleBenefitSelect = (index: number) => {
+    setActiveBenefit(index);
+  };
 
   // Hide scroll indicators when scrolling
   useEffect(() => {
@@ -176,29 +182,44 @@ export default function WhyWorkWithUs() {
           </div>
         </div>
 
-        {/* Swipe Indicators - Positioned on red line, 4px left of first card */}
-        <div className="relative w-full max-w-6xl mx-auto px-8">
-          <div className="flex space-x-2" style={{ 
-            position: 'absolute',
-            left: '4px',
-            top: '50%',
-            transform: 'translateY(-50%)',
-            zIndex: 10
-          }}>
-            {benefits.map((_, index) => (
-              <motion.div
-                key={index}
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
-                viewport={{ once: true }}
-                className="w-3 h-3 rounded-full bg-[#876E19]/30 border border-[#876E19]/50 transition-all duration-300 hover:bg-[#876E19]/50 cursor-pointer"
-                style={{
-                  boxShadow: '0 2px 4px rgba(135, 110, 25, 0.2)'
-                }}
-              />
-            ))}
-          </div>
+        {/* Brand Motif Swipe Indicators - Bottom Center */}
+        <div className="flex justify-center space-x-3 mt-4">
+          {benefits.map((_, index) => (
+            <motion.button
+              key={index}
+              onClick={() => handleBenefitSelect(index)}
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
+              viewport={{ once: true }}
+              className={`group transition-all duration-500 ease-out cursor-pointer ${
+                activeBenefit === index 
+                  ? 'scale-125' 
+                  : 'scale-100 hover:scale-110'
+              }`}
+              aria-label={`Go to benefit ${index + 1}`}
+            >
+              {/* Brand Motif Dot - Inspired by yellow maize theme */}
+              <div className={`relative transition-all duration-500 ${
+                activeBenefit === index 
+                  ? 'w-6 h-6' 
+                  : 'w-4 h-4'
+              }`}>
+                {/* Active state - filled yellow maize motif */}
+                {activeBenefit === index ? (
+                  <div className="w-full h-full bg-gradient-to-br from-[#F3EE33] to-[#D9B229] rounded-full shadow-lg transform rotate-45 scale-110">
+                    <div className="absolute inset-1 bg-gradient-to-br from-[#FFD330] to-[#F3EE33] rounded-full"></div>
+                    <div className="absolute inset-2 bg-gradient-to-br from-[#876E19] to-[#D9B229] rounded-full opacity-60"></div>
+                  </div>
+                ) : (
+                  /* Inactive state - outlined yellow maize motif */
+                  <div className="w-full h-full border-2 border-[#876E19] rounded-full bg-white/80 hover:bg-[#876E19]/10 transition-colors duration-300">
+                    <div className="absolute inset-1 border border-[#876E19] rounded-full"></div>
+                  </div>
+                )}
+              </div>
+            </motion.button>
+          ))}
         </div>
 
         {/* Call to Action */}
@@ -216,6 +237,14 @@ export default function WhyWorkWithUs() {
             GET STARTED TODAY
           </button>
         </motion.div>
+
+        {/* Scroll Indicator */}
+        <div className="flex justify-center mt-12">
+          <div className="flex flex-col items-center space-y-2">
+            <span className="text-xs text-[#876E19] font-nunito-light">Scroll</span>
+            <div className="w-0.5 h-6 bg-[#876E19]"></div>
+          </div>
+        </div>
       </div>
     </section>
   );
