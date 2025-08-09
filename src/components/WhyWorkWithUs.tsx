@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Award, 
@@ -69,15 +69,43 @@ export default function WhyWorkWithUs() {
       const marginRight = -160; // Negative margin between cards
       const cardSpacing = cardWidth + marginRight;
       
-      // Calculate which card is most visible
+      // Calculate which card is most visible with better precision
       const currentIndex = Math.round(scrollLeft / cardSpacing);
       const clampedIndex = Math.max(0, Math.min(currentIndex, benefits.length - 1));
       
+      // Only update if the index actually changed
       if (clampedIndex !== activeBenefit) {
+        console.log('Scroll detected:', { scrollLeft, currentIndex, clampedIndex, activeBenefit });
         setActiveBenefit(clampedIndex);
       }
     }
   };
+
+  // Add touch event handlers for better mobile support
+  const handleTouchStart = () => {
+    // Touch started - could add debouncing here if needed
+  };
+
+  const handleTouchEnd = () => {
+    // Touch ended - update active benefit after scroll settles
+    setTimeout(() => {
+      handleScroll();
+    }, 100);
+  };
+
+  // Ensure scroll handler is properly attached and add debugging
+  useEffect(() => {
+    const slider = sliderRef.current;
+    if (slider) {
+      // Add scroll event listener directly to ensure it works
+      slider.addEventListener('scroll', handleScroll);
+      
+      // Cleanup
+      return () => {
+        slider.removeEventListener('scroll', handleScroll);
+      };
+    }
+  }, []);
 
   return (
     <section id="why-work-with-us" className="py-12 bg-[#F3EE33]/20">
@@ -126,6 +154,8 @@ export default function WhyWorkWithUs() {
             className="flex overflow-x-auto scrollbar-hide gap-0 py-6 px-8 mx-auto max-w-6xl" 
             style={{ minHeight: '450px' }}
             onScroll={handleScroll}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
           >
             {benefits.map((benefit, index) => (
               <motion.div
