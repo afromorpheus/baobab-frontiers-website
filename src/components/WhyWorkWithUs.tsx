@@ -98,13 +98,14 @@ export default function WhyWorkWithUs() {
 
         {/* Benefits Slider */}
         <div className="relative w-full">
-          {/* Left Scroll Indicator - Responsive positioning */}
+          {/* Left Scroll Indicator - Positioned 8px inside carousel container */}
           {showScrollIndicators && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6 }}
-              className="absolute top-1/2 transform -translate-y-1/2 z-10 md:left-2 left-4"
+              className="absolute top-1/2 transform -translate-y-1/2 z-10"
+              style={{ left: '8px' }}
             >
               <div className="flex flex-col items-center space-y-2">
                 <div className="w-6 h-10 border-2 border-[#525252] rounded-full flex justify-center relative overflow-hidden">
