@@ -128,7 +128,10 @@ export default function HowItWorks() {
               </motion.div>
             )}
 
-          {steps.map((step, index) => (
+            {/* Spacer for 32px before first card */}
+            <div className="flex-shrink-0 w-8"></div>
+
+            {steps.map((step, index) => (
             <motion.div
               key={index}
                 initial={{ opacity: 0, x: 50 }}
