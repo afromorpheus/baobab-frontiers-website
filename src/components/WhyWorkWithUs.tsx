@@ -49,6 +49,34 @@ export default function WhyWorkWithUs() {
   // Handle benefit selection
   const handleBenefitSelect = (index: number) => {
     setActiveBenefit(index);
+    // Scroll to the selected benefit
+    if (sliderRef.current) {
+      const cardWidth = 544; // Width of each card
+      const marginRight = -160; // Negative margin between cards
+      const scrollPosition = index * (cardWidth + marginRight);
+      sliderRef.current.scrollTo({
+        left: scrollPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  // Handle scroll to update active benefit
+  const handleScroll = () => {
+    if (sliderRef.current) {
+      const scrollLeft = sliderRef.current.scrollLeft;
+      const cardWidth = 544; // Width of each card
+      const marginRight = -160; // Negative margin between cards
+      const cardSpacing = cardWidth + marginRight;
+      
+      // Calculate which card is most visible
+      const currentIndex = Math.round(scrollLeft / cardSpacing);
+      const clampedIndex = Math.max(0, Math.min(currentIndex, benefits.length - 1));
+      
+      if (clampedIndex !== activeBenefit) {
+        setActiveBenefit(clampedIndex);
+      }
+    }
   };
 
   return (
@@ -97,6 +125,7 @@ export default function WhyWorkWithUs() {
             ref={sliderRef}
             className="flex overflow-x-auto scrollbar-hide gap-0 py-6 px-8 mx-auto max-w-6xl" 
             style={{ minHeight: '450px' }}
+            onScroll={handleScroll}
           >
             {benefits.map((benefit, index) => (
               <motion.div
