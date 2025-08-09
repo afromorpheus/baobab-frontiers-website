@@ -102,15 +102,14 @@ export default function HowItWorks() {
             className="flex gap-0 px-8 mx-auto max-w-6xl relative" 
             style={{ minHeight: '450px' }}
           >
-            {/* Left Scroll Indicator - Positioned 8px inside carousel container */}
+            {/* Left Scroll Indicator - Responsive positioning */}
             {showScrollIndicators && (
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6 }}
-                className="absolute z-10"
+                className="absolute z-10 md:left-2 left-4"
                 style={{ 
-                  left: '8px',
                   top: '50%',
                   transform: 'translateY(-50%)'
                 }}

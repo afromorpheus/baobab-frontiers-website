@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   MessageCircle, 
@@ -40,6 +41,22 @@ const contactMethods = [
 ];
 
 export default function LetsTalk() {
+  const sliderRef = useRef<HTMLDivElement>(null);
+  const [showScrollIndicators, setShowScrollIndicators] = useState(true);
+
+  // Hide scroll indicators when scrolling
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollIndicators(false);
+    };
+
+    const slider = sliderRef.current;
+    if (slider) {
+      slider.addEventListener('scroll', handleScroll);
+      return () => slider.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
+
   return (
     <section id="lets-talk" className="py-20 bg-[#E8E8E8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -79,7 +96,31 @@ export default function LetsTalk() {
 
         {/* Contact Methods Grid */}
         <div className="flex justify-center">
-          <div className="flex overflow-x-auto scrollbar-hide gap-0 py-10 px-8 mb-12 max-w-6xl">
+          <div className="relative w-full max-w-6xl">
+            {/* Left Scroll Indicator - Responsive positioning */}
+            {showScrollIndicators && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6 }}
+                className="absolute top-1/2 transform -translate-y-1/2 z-10 md:left-2 left-4"
+              >
+                <div className="flex flex-col items-center space-y-2">
+                  <div className="w-6 h-10 border-2 border-[#525252] rounded-full flex justify-center relative overflow-hidden">
+                    <motion.div
+                      animate={{ x: [-2, 2, -2] }}
+                      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                      className="w-1 h-3 bg-[#007628] rounded-full mt-2"
+                    ></motion.div>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+            
+            <div 
+              ref={sliderRef}
+              className="flex overflow-x-auto scrollbar-hide gap-0 py-10 px-8 mb-12"
+            >
             {contactMethods.map((method, index) => (
               <motion.div
                 key={index}
