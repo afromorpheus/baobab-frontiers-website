@@ -68,8 +68,8 @@ export default function LetsTalk() {
             className="mx-auto mb-8 flex justify-center"
           >
             <img
-              src="/Brand-Motif-Ahoden-Alt.svg"
-              alt="Ahoden Brand Motif"
+              src="/Brand-Motif-Asanka-New.svg"
+              alt="Asanka New Brand Motif"
               className="h-24 w-auto"
             />
           </motion.div>
