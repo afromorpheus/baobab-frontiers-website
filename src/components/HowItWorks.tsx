@@ -116,7 +116,6 @@ export default function HowItWorks() {
                 }}
               >
                 <div className="flex items-center space-x-2">
-                  <span className="text-sm text-[#525252] font-nunito-light uppercase tracking-wider">Swipe</span>
                   <div className="w-6 h-10 border-2 border-[#525252] rounded-full flex justify-center relative overflow-hidden">
                     <motion.div
                       animate={{ y: [0, 12, 0] }}
