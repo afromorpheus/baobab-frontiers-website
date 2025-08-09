@@ -117,9 +117,10 @@ export default function HowItWorks() {
                 <div className="flex items-center space-x-2">
                   <div className="w-6 h-10 border-2 border-[#525252] rounded-full flex justify-center relative overflow-hidden">
                     <motion.div
-                      animate={{ x: [-2, 2, -2] }}
+                      animate={{ x: [-4, 4, -4] }}
                       transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                       className="w-1 h-3 bg-[#007628] rounded-full mt-2"
+                      style={{ transformOrigin: 'center' }}
                     ></motion.div>
                   </div>
                 </div>
