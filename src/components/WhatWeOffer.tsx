@@ -294,37 +294,37 @@ export default function WhatWeOffer() {
                           />
                         </div>
                       ) : activeFeature === 1 ? (
-                        /* Fair Pricing - Brand Motif */
+                        /* Fair Pricing - Mask group.png */
                         <div className="w-full h-full relative">
                           <img
-                            src="/Brand-Motif-Card-Yellow-1.svg"
+                            src="/Mask group.png"
                             alt="Fair Pricing"
                             className="w-full h-full object-contain"
                           />
                         </div>
                       ) : activeFeature === 2 ? (
-                        /* Reliable Logistics - Brand Motif */
+                        /* Reliable Logistics - Mask group-1.png */
                         <div className="w-full h-full relative">
                           <img
-                            src="/Brand-Motif-Card-Yellow-2.svg"
+                            src="/Mask group-1.png"
                             alt="Reliable Logistics"
                             className="w-full h-full object-contain"
                           />
                         </div>
                       ) : activeFeature === 3 ? (
-                        /* Data Driven - Brand Motif */
+                        /* Data Driven - Mask group-2.png */
                         <div className="w-full h-full relative">
                           <img
-                            src="/Brand-Motif-Card-Yellow-3.svg"
+                            src="/Mask group-2.png"
                             alt="Data Driven"
                             className="w-full h-full object-contain"
                           />
                         </div>
                       ) : activeFeature === 4 ? (
-                        /* Trusted Farmers - Brand Motif */
+                        /* Trusted Farmers - Mask group-3.png */
                         <div className="w-full h-full relative">
                           <img
-                            src="/Brand-Motif-Card-Yellow-4.svg"
+                            src="/Mask group-3.png"
                             alt="Trusted Farmers"
                             className="w-full h-full object-contain"
                           />
