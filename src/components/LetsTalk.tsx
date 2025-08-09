@@ -79,7 +79,7 @@ export default function LetsTalk() {
 
         {/* Contact Methods Grid */}
         <div className="flex justify-center">
-          <div className="flex overflow-x-auto scrollbar-hide gap-0 py-10 px-4 mb-12 max-w-6xl">
+          <div className="flex overflow-x-auto scrollbar-hide gap-0 py-10 px-8 mb-12 max-w-6xl">
             {contactMethods.map((method, index) => (
               <motion.div
                 key={index}

@@ -126,9 +126,6 @@ export default function WhyWorkWithUs() {
             className="flex overflow-x-auto scrollbar-hide gap-0 py-10 px-8 mx-auto max-w-6xl" 
             style={{ minHeight: '450px' }}
           >
-            {/* Spacer to prevent first card truncation */}
-            <div className="flex-shrink-0 w-8"></div>
-            
             {benefits.map((benefit, index) => (
               <motion.div
                 key={index}
