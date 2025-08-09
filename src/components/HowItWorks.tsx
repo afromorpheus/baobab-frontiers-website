@@ -111,7 +111,7 @@ export default function HowItWorks() {
                 className="absolute z-10 md:left-2 left-4"
                 style={{ 
                   top: '50%',
-                  transform: 'translateY(-50%)'
+                  transform: 'translateY(-50%) translateY(-8px)'
                 }}
               >
                 <div className="flex items-center space-x-2">
