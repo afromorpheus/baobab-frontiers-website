@@ -52,9 +52,10 @@ export default function HowItWorks() {
     if (sliderRef.current) {
       const container = sliderRef.current;
       const cardWidth = 320; // Width of each card
+      const cardMargin = -160; // Negative margin between cards
       
-      // Calculate scroll position: card width * index
-      const scrollPosition = cardWidth * index;
+      // Calculate scroll position: (card width + margin) * index
+      const scrollPosition = (cardWidth + cardMargin) * index;
       console.log('Scrolling to position:', scrollPosition);
       
       container.scrollTo({
@@ -71,9 +72,10 @@ export default function HowItWorks() {
         const container = sliderRef.current;
         const scrollLeft = container.scrollLeft;
         const cardWidth = 320;
+        const cardMargin = -160;
         
         // Calculate which step is most visible
-        const currentStep = Math.round(scrollLeft / cardWidth);
+        const currentStep = Math.round(scrollLeft / (cardWidth + cardMargin));
         console.log('Scroll position:', scrollLeft, 'Current step:', currentStep);
         
         if (currentStep !== activeStep && currentStep >= 0 && currentStep < steps.length) {
@@ -134,7 +136,7 @@ export default function HowItWorks() {
             className="flex gap-0 px-8 relative" 
             style={{ 
               minHeight: '380px',
-              width: `${steps.length * 320}px` // Full width for all cards
+              width: `${steps.length * 320 - (steps.length - 1) * 160}px` // Full width accounting for overlapping cards
             }}
           >
             {steps.map((step, index) => (
@@ -145,7 +147,7 @@ export default function HowItWorks() {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
                 className="flex-shrink-0 relative"
-                style={{ width: '320px' }}
+                style={{ width: '320px', marginRight: index < steps.length - 1 ? '-160px' : '0' }}
               >
                 {/* Card Background */}
                 <div className="relative h-72 w-full">
