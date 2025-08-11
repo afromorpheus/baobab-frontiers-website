@@ -46,17 +46,14 @@ export default function HowItWorks() {
 
   // Handle step selection and scroll to that step
   const handleStepSelect = (index: number) => {
-    console.log('Clicking step:', index);
     setActiveStep(index);
     
     if (sliderRef.current) {
       const container = sliderRef.current;
       const cardWidth = 320; // Width of each card
-      const cardMargin = -160; // Negative margin between cards
       
-      // Calculate scroll position: (card width + margin) * index
-      const scrollPosition = (cardWidth + cardMargin) * index;
-      console.log('Scrolling to position:', scrollPosition);
+      // Calculate scroll position: card width * index (no margins)
+      const scrollPosition = cardWidth * index;
       
       container.scrollTo({
         left: scrollPosition,
@@ -72,14 +69,15 @@ export default function HowItWorks() {
         const container = sliderRef.current;
         const scrollLeft = container.scrollLeft;
         const cardWidth = 320;
-        const cardMargin = -160;
         
         // Calculate which step is most visible
-        const currentStep = Math.round(scrollLeft / (cardWidth + cardMargin));
-        console.log('Scroll position:', scrollLeft, 'Current step:', currentStep);
+        const stepIndex = Math.round(scrollLeft / cardWidth);
         
-        if (currentStep !== activeStep && currentStep >= 0 && currentStep < steps.length) {
-          setActiveStep(currentStep);
+        // Ensure index is within bounds
+        const clampedIndex = Math.max(0, Math.min(stepIndex, steps.length - 1));
+        
+        if (clampedIndex !== activeStep) {
+          setActiveStep(clampedIndex);
         }
       }
     };
@@ -89,7 +87,7 @@ export default function HowItWorks() {
       container.addEventListener('scroll', handleScroll);
       return () => container.removeEventListener('scroll', handleScroll);
     }
-  }, [activeStep, steps.length]);
+  }, [activeStep]);
 
   return (
     <section id="how-it-works" className="py-12 bg-[#D9EAD3]">
@@ -133,10 +131,10 @@ export default function HowItWorks() {
           {/* Cards Container - Centered with proper spacing */}
           <div 
             ref={sliderRef}
-            className="flex gap-0 px-8 relative" 
+            className="flex gap-0 px-8 mx-auto relative" 
             style={{ 
               minHeight: '380px',
-              width: `${steps.length * 320 - (steps.length - 1) * 160}px` // Full width accounting for overlapping cards
+              width: `${steps.length * 320}px` // Full width for all cards with no gaps
             }}
           >
             {steps.map((step, index) => (
@@ -147,7 +145,7 @@ export default function HowItWorks() {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
                 className="flex-shrink-0 relative"
-                style={{ width: '320px', marginRight: index < steps.length - 1 ? '-160px' : '0' }}
+                style={{ width: '320px' }}
               >
                 {/* Card Background */}
                 <div className="relative h-72 w-full">
@@ -159,27 +157,27 @@ export default function HowItWorks() {
                   
                   {/* Content Container */}
                   <div className="absolute inset-0 flex flex-col justify-start items-center pt-[52px] px-6 z-20">
-                    {/* Icon */}
-                    <div className="mb-3">
+                {/* Icon */}
+                    <div className="mb-4">
                       <div 
                         className="w-12 h-12 bg-lime-400 rounded-lg flex items-center justify-center"
                         style={{ boxShadow: 'inset 0 2px 6px rgba(0, 0, 0, 0.25)' }}
                       >
                         <step.icon className="w-6 h-6 text-[#007628]" />
                       </div>
-                    </div>
+                </div>
 
-                    {/* Title */}
+                {/* Title */}
                     <h3 
-                      className="text-lg font-kannada-regular text-lime-400 mb-1.5 text-center z-20 leading-tight"
+                      className="text-lg font-kannada-regular text-lime-400 mb-0.5 text-center z-20"
                       dangerouslySetInnerHTML={{ __html: step.title }}
                     />
 
-                    {/* Description */}
-                    <p className="text-white text-center leading-tight font-nunito-light z-20 px-2">
-                      {step.description}
-                    </p>
-                  </div>
+                {/* Description */}
+                    <p className="text-white text-center leading-relaxed font-nunito-light z-20">
+                  {step.description}
+                </p>
+              </div>
                 </div>
             </motion.div>
           ))}
