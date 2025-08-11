@@ -51,9 +51,10 @@ export default function HowItWorks() {
     if (sliderRef.current) {
       const container = sliderRef.current;
       const cardWidth = 320; // Width of each card
+      const cardOverlap = 4; // 4px overlap between cards
       
-      // Calculate scroll position: card width * index (no margins)
-      const scrollPosition = cardWidth * index;
+      // Calculate scroll position: (card width - overlap) * index
+      const scrollPosition = (cardWidth - cardOverlap) * index;
       
       container.scrollTo({
         left: scrollPosition,
@@ -69,9 +70,10 @@ export default function HowItWorks() {
         const container = sliderRef.current;
         const scrollLeft = container.scrollLeft;
         const cardWidth = 320;
+        const cardOverlap = 4; // 4px overlap between cards
         
         // Calculate which step is most visible
-        const stepIndex = Math.round(scrollLeft / cardWidth);
+        const stepIndex = Math.round(scrollLeft / (cardWidth - cardOverlap));
         
         // Ensure index is within bounds
         const clampedIndex = Math.max(0, Math.min(stepIndex, steps.length - 1));
@@ -134,7 +136,7 @@ export default function HowItWorks() {
             className="flex gap-0 px-8 mx-auto relative" 
             style={{ 
               minHeight: '380px',
-              width: `${steps.length * 320}px` // Full width for all cards with no gaps
+              width: `${steps.length * 320 - (steps.length - 1) * 4}px` // Full width accounting for 4px overlaps
             }}
           >
             {steps.map((step, index) => (
@@ -145,7 +147,7 @@ export default function HowItWorks() {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
                 className="flex-shrink-0 relative"
-                style={{ width: '320px' }}
+                style={{ width: '320px', marginRight: '-4px' }}
               >
                 {/* Card Background */}
                 <div className="relative h-72 w-full">
