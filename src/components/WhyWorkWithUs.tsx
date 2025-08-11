@@ -180,7 +180,7 @@ export default function WhyWorkWithUs() {
 
                   {/* Content Container - Centered within motif */}
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="flex items-center gap-2 max-w-xs">
+                    <div className="flex items-center gap-3 max-w-xs">
                       {/* Icon Container - Left Side */}
                       <div className="flex-shrink-0">
                         <div 
@@ -193,10 +193,10 @@ export default function WhyWorkWithUs() {
 
                       {/* Text Content - Right Side */}
                       <div className="flex-1">
-                        <h3 className="text-xl font-kannada-regular text-[#F3EE33] mb-2 leading-tight whitespace-pre-line">
+                        <h3 className="text-xl font-kannada-regular text-[#F3EE33] mb-1.5 leading-tight whitespace-pre-line">
                           {benefit.title}
                         </h3>
-                        <p className="text-white leading-relaxed font-nunito-light">
+                        <p className="text-white leading-tight font-nunito-light">
                           {benefit.description}
                         </p>
                       </div>

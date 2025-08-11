@@ -140,7 +140,7 @@ const customers = [
 
                   {/* Content Container - Centered within motif */}
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="flex items-center gap-2 max-w-xs">
+                    <div className="flex items-center gap-3 max-w-xs">
                       {/* Icon Container - Left Side */}
                       <div className="flex-shrink-0">
                         <div 
@@ -149,16 +149,16 @@ const customers = [
                         >
                           <customer.icon size={32} className="text-[#2D2D2D]" />
                         </div>
-                </div>
+                      </div>
 
                       {/* Text Content - Right Side */}
                       <div className="flex-1">
-                        <h3 className="text-xl font-kannada-regular group-hover:font-kannada-bold text-[#222222] mb-2 leading-tight whitespace-pre-line transition-all duration-300">
-                  {customer.title}
-                </h3>
-                <p className="text-[#525252] leading-relaxed font-nunito-light">
-                  {customer.description}
-                </p>
+                        <h3 className="text-xl font-kannada-regular group-hover:font-kannada-bold text-[#222222] mb-1.5 leading-tight whitespace-pre-line transition-all duration-300">
+                          {customer.title}
+                        </h3>
+                        <p className="text-[#525252] leading-tight font-nunito-light">
+                          {customer.description}
+                        </p>
                       </div>
                     </div>
                   </div>

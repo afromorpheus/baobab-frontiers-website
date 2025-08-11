@@ -260,7 +260,7 @@ export default function LetsTalk() {
                       {/* Icon Container - Left Side */}
                       <div className="flex-shrink-0">
                         <div 
-                          className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-4 mx-auto"
+                          className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-3 mx-auto"
                           style={{ boxShadow: 'inset 0 2px 6px rgba(0, 0, 0, 0.25)' }}
                         >
                           <method.icon size={24} className="text-[#876E19]" />
@@ -268,12 +268,12 @@ export default function LetsTalk() {
                       </div>
 
                       {/* Title */}
-                      <h3 className="text-[20px] md:text-[18px] font-kannada-regular text-[#222222] mb-2">
+                      <h3 className="text-[20px] md:text-[18px] font-kannada-regular text-[#222222] mb-1.5">
                         {method.title}
                       </h3>
 
                       {/* Description */}
-                      <p className="text-[17px] md:text-[15px] text-[#525252] font-nunito-light mb-3">
+                      <p className="text-[17px] md:text-[15px] text-[#525252] font-nunito-light mb-2.5">
                         {method.description}
                       </p>
 
@@ -329,14 +329,14 @@ export default function LetsTalk() {
               />
             </div>
             
-            <h3 className="text-2xl font-kannada-regular text-[#222222] mb-4 text-center">
+            <h3 className="text-2xl font-kannada-regular text-[#222222] mb-3 text-center">
               SOURCE MAIZE FROM US
             </h3>
             
-            <form className="space-y-2" onSubmit={handleSubmit}>
+            <form className="space-y-1.5" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 <div>
-                  <label className="block text-sm font-nunito-light text-[#525252] mb-2">NAME</label>
+                  <label className="block text-sm font-nunito-light text-[#525252] mb-1.5">NAME</label>
                   <input 
                     type="text" 
                     name="name"
@@ -348,7 +348,7 @@ export default function LetsTalk() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-nunito-light text-[#525252] mb-2">EMAIL</label>
+                  <label className="block text-sm font-nunito-light text-[#525252] mb-1.5">EMAIL</label>
                   <input 
                     type="email" 
                     name="email"
@@ -362,7 +362,7 @@ export default function LetsTalk() {
               </div>
               
               <div>
-                <label className="block text-sm font-nunito-light text-[#525252] mb-2">COMPANY</label>
+                <label className="block text-sm font-nunito-light text-[#525252] mb-1.5">COMPANY</label>
                 <input 
                   type="text" 
                   name="company"
@@ -375,21 +375,21 @@ export default function LetsTalk() {
               </div>
               
               <div>
-                <label className="block text-sm font-nunito-light text-[#525252] mb-2">CONTACT NUMBER</label>
+                <label className="block text-sm font-nunito-light text-[#525252] mb-1.5">CONTACT NUMBER</label>
                 <input 
                   type="tel" 
                   name="contactNumber"
                   value={formData.contactNumber}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-[#D09229]/30 rounded-2xl focus:outline-none focus:ring-[#007628] focus:border-transparent font-nunito-light bg-white"
+                  className="w-full px-4 py-3 border border-[#D09229]/30 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#007628] focus:border-transparent font-nunito-light bg-white"
                   placeholder="Your phone number"
                 />
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 <div>
-                  <label className="block text-sm font-nunito-light text-[#525252] mb-2">QUANTITY</label>
+                  <label className="block text-sm font-nunito-light text-[#525252] mb-1.5">QUANTITY</label>
                   <input 
                     type="number" 
                     name="quantity"
@@ -400,7 +400,7 @@ export default function LetsTalk() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-nunito-light text-[#525252] mb-2">UNIT</label>
+                  <label className="block text-sm font-nunito-light text-[#525252] mb-1.5">UNIT</label>
                   <select 
                     name="unit"
                     value={formData.unit}
@@ -414,7 +414,7 @@ export default function LetsTalk() {
               </div>
               
               <div>
-                <label className="block text-sm font-nunito-light text-[#525252] mb-2">MAIZE TYPE</label>
+                <label className="block text-sm font-nunito-light text-[#525252] mb-1.5">MAIZE TYPE</label>
                 <select 
                   name="maizeType"
                   value={formData.maizeType}
@@ -428,7 +428,7 @@ export default function LetsTalk() {
               </div>
               
               <div>
-                <label className="block text-sm font-nunito-light text-[#525252] mb-2">MESSAGE</label>
+                <label className="block text-sm font-nunito-light text-[#525252] mb-1.5">MESSAGE</label>
                 <textarea 
                   name="message"
                   rows={4}

@@ -157,27 +157,27 @@ export default function HowItWorks() {
                   
                   {/* Content Container */}
                   <div className="absolute inset-0 flex flex-col justify-start items-center pt-[52px] px-6 z-20">
-                {/* Icon */}
-                    <div className="mb-4">
+                    {/* Icon */}
+                    <div className="mb-3">
                       <div 
                         className="w-12 h-12 bg-lime-400 rounded-lg flex items-center justify-center"
                         style={{ boxShadow: 'inset 0 2px 6px rgba(0, 0, 0, 0.25)' }}
                       >
                         <step.icon className="w-6 h-6 text-[#007628]" />
                       </div>
-                </div>
+                    </div>
 
-                {/* Title */}
+                    {/* Title */}
                     <h3 
-                      className="text-lg font-kannada-regular text-lime-400 mb-0.5 text-center z-20"
+                      className="text-lg font-kannada-regular text-lime-400 mb-1.5 text-center z-20 leading-tight"
                       dangerouslySetInnerHTML={{ __html: step.title }}
                     />
 
-                {/* Description */}
-                    <p className="text-white text-center leading-relaxed font-nunito-light z-20">
-                  {step.description}
-                </p>
-              </div>
+                    {/* Description */}
+                    <p className="text-white text-center leading-tight font-nunito-light z-20 px-2">
+                      {step.description}
+                    </p>
+                  </div>
                 </div>
             </motion.div>
           ))}
