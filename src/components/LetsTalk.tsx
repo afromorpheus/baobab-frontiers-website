@@ -103,8 +103,13 @@ export default function LetsTalk() {
       });
 
       console.log('Formspree response:', response.status, response.ok);
+      console.log('Response headers:', response.headers);
+      
+      const responseText = await response.text();
+      console.log('Response text:', responseText);
 
-      if (response.ok) {
+      // Formspree returns 200 for successful submissions
+      if (response.status === 200 || response.ok) {
         setSubmitStatus('success');
         console.log('Form submitted successfully');
         setFormData({
@@ -119,7 +124,7 @@ export default function LetsTalk() {
         });
       } else {
         setSubmitStatus('error');
-        console.log('Form submission failed');
+        console.log('Form submission failed with status:', response.status);
       }
     } catch (error) {
       console.error('Form submission error:', error);
