@@ -26,7 +26,7 @@ export default function Header() {
                 alt="Baobab Frontiers"
                 width={480}
                 height={160}
-                className="h-12 md:h-16 w-auto"
+                className="h-10 md:h-12 w-auto"
                 priority
               />
             </div>
