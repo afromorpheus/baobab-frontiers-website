@@ -77,24 +77,36 @@ export default function LetsTalk() {
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log('Form submission started');
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
     try {
+      // Create FormData for Formspree
+      const formDataToSend = new FormData();
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('company', formData.company);
+      formDataToSend.append('contactNumber', formData.contactNumber);
+      formDataToSend.append('quantity', formData.quantity);
+      formDataToSend.append('unit', formData.unit);
+      formDataToSend.append('maizeType', formData.maizeType);
+      formDataToSend.append('message', formData.message);
+      formDataToSend.append('subject', `New Maize Enquiry from ${formData.name}`);
+      formDataToSend.append('_replyto', formData.email);
+
+      console.log('Sending form data to Formspree:', formData);
+      
       const response = await fetch('https://formspree.io/f/mnnzlkdy', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...formData,
-          subject: `New Maize Enquiry from ${formData.name}`,
-          _replyto: formData.email
-        })
+        body: formDataToSend
       });
+
+      console.log('Formspree response:', response.status, response.ok);
 
       if (response.ok) {
         setSubmitStatus('success');
+        console.log('Form submitted successfully');
         setFormData({
           name: '',
           email: '',
@@ -107,8 +119,10 @@ export default function LetsTalk() {
         });
       } else {
         setSubmitStatus('error');
+        console.log('Form submission failed');
       }
     } catch (error) {
+      console.error('Form submission error:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
