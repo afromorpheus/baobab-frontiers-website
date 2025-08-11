@@ -323,7 +323,7 @@ export default function LetsTalk() {
             {/* Small Footer Logo */}
             <div className="flex justify-center mb-4">
               <img 
-                src="/Logo Alternate Transparent-1.png"
+                src="/Stand Alone Logo - Coloured.svg"
                 alt="Baobab Frontiers Logo"
                 className="h-32 w-auto"
               />
