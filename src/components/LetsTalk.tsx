@@ -323,12 +323,12 @@ export default function LetsTalk() {
             {/* Small Footer Logo */}
             <div className="flex justify-center mb-4">
               <div className="flex items-center space-x-1">
-                <div className="w-4 h-4 bg-[#007628] rounded-sm flex items-center justify-center text-white text-xs font-bold">B</div>
-                <div className="w-4 h-4 bg-[#F3EE33] rounded-sm flex items-center justify-center text-[#876E19] text-xs font-bold">A</div>
-                <div className="w-4 h-4 bg-[#007628] rounded-sm flex items-center justify-center text-white text-xs font-bold">O</div>
-                <div className="w-4 h-4 bg-[#F3EE33] rounded-sm flex items-center justify-center text-[#876E19] text-xs font-bold">B</div>
-                <div className="w-4 h-4 bg-[#007628] rounded-sm flex items-center justify-center text-white text-xs font-bold">A</div>
-                <div className="w-4 h-4 bg-[#F3EE33] rounded-sm flex items-center justify-center text-[#876E19] text-xs font-bold">B</div>
+                <div className="w-8 h-8 bg-[#007628] rounded-sm flex items-center justify-center text-white text-sm font-bold">B</div>
+                <div className="w-8 h-8 bg-[#F3EE33] rounded-sm flex items-center justify-center text-[#876E19] text-sm font-bold">A</div>
+                <div className="w-8 h-8 bg-[#007628] rounded-sm flex items-center justify-center text-white text-sm font-bold">O</div>
+                <div className="w-8 h-8 bg-[#F3EE33] rounded-sm flex items-center justify-center text-[#876E19] text-sm font-bold">B</div>
+                <div className="w-8 h-8 bg-[#007628] rounded-sm flex items-center justify-center text-white text-sm font-bold">A</div>
+                <div className="w-8 h-8 bg-[#F3EE33] rounded-sm flex items-center justify-center text-[#876E19] text-sm font-bold">B</div>
               </div>
             </div>
             
