@@ -36,11 +36,6 @@ export default function HeroSection() {
               className="w-32 h-32 md:w-48 md:h-48 drop-shadow-2xl"
               priority
             />
-            
-            {/* Debug Info - Remove this after checking */}
-            <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-black/80 text-white text-xs px-2 py-1 rounded">
-              Mobile: 128px (h-32) | Desktop: 192px (h-48)
-            </div>
           </motion.div>
 
           {/* Main Headline */}
