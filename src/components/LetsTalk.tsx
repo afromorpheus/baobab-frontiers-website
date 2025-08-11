@@ -319,7 +319,7 @@ export default function LetsTalk() {
           viewport={{ once: true }}
           className="max-w-2xl mx-auto"
         >
-          <div className="bg-[#F3EE33] p-8 rounded-3xl border border-gray-100">
+          <div className="bg-[#D9B229] p-8 rounded-3xl border border-gray-100">
             {/* Small Footer Logo */}
             <div className="flex justify-center mb-4">
               <img 
