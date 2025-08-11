@@ -243,47 +243,97 @@ export default function LetsTalk() {
                 className="group relative flex-shrink-0"
                 style={{ width: '300px', marginRight: index < contactMethods.length - 1 ? '-30px' : '0' }}
               >
-                {/* Brand Motif Background */}
-                <div className="relative w-full h-96 md:h-80">
-                  {/* Yellow Brand Motif Background */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <img
-                      src="/Brand-Motif-Card-Yellow-Contact-Alt.svg"
-                      alt="Contact Card Motif"
-                      className="w-full h-full object-contain scale-90"
-                    />
-                  </div>
-
-                  {/* Content Container - Centered within motif */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center max-w-sm md:max-w-xs px-8 md:px-4">
-                      {/* Icon Container - Left Side */}
-                      <div className="flex-shrink-0">
-                        <div 
-                          className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-3 mx-auto"
-                          style={{ boxShadow: 'inset 0 2px 6px rgba(0, 0, 0, 0.25)' }}
-                        >
-                          <method.icon size={24} className="text-[#876E19]" />
-                        </div>
+                {/* Make WhatsApp card clickable */}
+                {method.title === "WHATSAPP" ? (
+                  <a 
+                    href="https://wa.me/233504688829?text=Hi! I'm interested in sourcing maize from Baobab Frontiers. Can you help me?"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full h-full"
+                  >
+                    <div className="relative w-full h-96 md:h-80 cursor-pointer">
+                      {/* Yellow Brand Motif Background */}
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <img
+                          src="/Brand-Motif-Card-Yellow-Contact-Alt.svg"
+                          alt="Contact Card Motif"
+                          className="w-full h-full object-contain scale-90"
+                        />
                       </div>
 
-                      {/* Title */}
-                      <h3 className="text-[20px] md:text-[18px] font-kannada-regular text-[#222222] mb-1.5">
-                        {method.title}
-                      </h3>
+                      {/* Content Container - Centered within motif */}
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="text-center max-w-sm md:max-w-xs px-8 md:px-4">
+                          {/* Icon Container - Left Side */}
+                          <div className="flex-shrink-0">
+                            <div 
+                              className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-3 mx-auto"
+                              style={{ boxShadow: 'inset 0 2px 6px rgba(0, 0, 0, 0.25)' }}
+                            >
+                              <method.icon size={24} className="text-[#876E19]" />
+                            </div>
+                          </div>
 
-                      {/* Description */}
-                      <p className="text-[17px] md:text-[15px] text-[#525252] font-nunito-light mb-2.5">
-                        {method.description}
-                      </p>
+                          {/* Title */}
+                          <h3 className="text-[20px] md:text-[18px] font-kannada-regular text-[#222222] mb-1.5">
+                            {method.title}
+                          </h3>
 
-                      {/* Contact Info */}
-                      <p className="text-white font-nunito-light font-medium whitespace-pre-line text-[17px] md:text-[15px]">
-                        {method.contact}
-                      </p>
+                          {/* Description */}
+                          <p className="text-[17px] md:text-[15px] text-[#525252] font-nunito-light mb-2.5">
+                            {method.description}
+                          </p>
+
+                          {/* Contact Info */}
+                          <p className="text-white font-nunito-light font-medium whitespace-pre-line text-[17px] md:text-[15px]">
+                            {method.contact}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                ) : (
+                  <div className="relative w-full h-96 md:h-80">
+                    {/* Yellow Brand Motif Background */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <img
+                        src="/Brand-Motif-Card-Yellow-Contact-Alt.svg"
+                        alt="Contact Card Motif"
+                        className="w-full h-full object-contain scale-90"
+                      />
+                    </div>
+
+                    {/* Content Container - Centered within motif */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-center max-w-sm md:max-w-xs px-8 md:px-4">
+                        {/* Icon Container - Left Side */}
+                        <div className="flex-shrink-0">
+                          <div 
+                            className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-3 mx-auto"
+                            style={{ boxShadow: 'inset 0 2px 6px rgba(0, 0, 0, 0.25)' }}
+                          >
+                            <method.icon size={24} className="text-[#876E19]" />
+                          </div>
+                        </div>
+
+                        {/* Title */}
+                        <h3 className="text-[20px] md:text-[18px] font-kannada-regular text-[#222222] mb-1.5">
+                          {method.title}
+                        </h3>
+
+                        {/* Description */}
+                        <p className="text-[17px] md:text-[15px] text-[#525252] font-nunito-light mb-2.5">
+                          {method.description}
+                        </p>
+
+                        {/* Contact Info */}
+                        <p className="text-white font-nunito-light font-medium whitespace-pre-line text-[17px] md:text-[15px]">
+                          {method.contact}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
               </motion.div>
             ))}
           </div>

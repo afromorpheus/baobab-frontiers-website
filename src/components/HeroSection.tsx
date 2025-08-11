@@ -70,10 +70,15 @@ export default function HeroSection() {
               <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </a>
             
-            <button className="flex items-center space-x-2 px-8 py-2 md:py-4 bg-white border-2 border-[#007628] text-[#007628] rounded-full hover:bg-[#007628] hover:text-white transition-all duration-300 font-kannada-regular text-base md:text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            <a 
+              href="https://wa.me/233504688829?text=Hi! I'm interested in sourcing maize from Baobab Frontiers. Can you help me?"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 px-8 py-2 md:py-4 bg-white border-2 border-[#007628] text-[#007628] rounded-full hover:bg-[#007628] hover:text-white transition-all duration-300 font-kannada-regular text-base md:text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            >
               <MessageCircle size={20} />
               <span>WHATSAPP US</span>
-            </button>
+            </a>
           </motion.div>
         </motion.div>
 
