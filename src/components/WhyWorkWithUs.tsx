@@ -241,9 +241,9 @@ export default function WhyWorkWithUs() {
           <p className="text-lg text-[#525252] font-nunito-light mb-4">
             Ready to experience the difference of working with a trusted partner?
           </p>
-          <button className="px-8 py-4 bg-[#F3EE33] text-[#222222] rounded-full hover:bg-[#D09229] transition-colors font-kannada-regular text-lg shadow-lg hover:shadow-xl">
+          <a href="#contact" className="inline-block px-8 py-4 bg-[#F3EE33] text-[#222222] rounded-full hover:bg-[#D09229] transition-colors font-kannada-regular text-lg shadow-lg hover:shadow-xl">
             GET STARTED TODAY
-          </button>
+          </a>
         </motion.div>
 
 

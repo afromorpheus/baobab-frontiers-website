@@ -195,9 +195,9 @@ const customers = [
           <h3 className="text-lg text-[#525252] font-nunito-light mb-8">
             Ready to source quality yellow maize for your business?
           </h3>
-          <button className="bg-[#007628] text-white px-8 py-4 rounded-full font-kannada-bold shadow-lg hover:shadow-xl hover:bg-[#005d1f] transition-all duration-300">
+          <a href="#contact" className="inline-block bg-[#007628] text-white px-8 py-4 rounded-full font-kannada-bold shadow-lg hover:shadow-xl hover:bg-[#005d1f] transition-all duration-300">
             GET STARTED TODAY
-          </button>
+          </a>
         </div>
 
 

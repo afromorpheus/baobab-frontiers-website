@@ -11,7 +11,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-18 md:h-20">
+        <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo - Centered on mobile, left on desktop */}
           <motion.div 
             className="flex items-center space-x-2 md:justify-start justify-center flex-1 md:flex-none"
@@ -54,14 +54,15 @@ export default function Header() {
           {/* Call to Action Button & Mobile Menu Toggle */}
           <div className="flex items-center space-x-3">
             {/* Buy Maize Button - Hidden on mobile, visible on desktop */}
-            <motion.button 
+            <motion.a 
+              href="#contact"
               className="hidden md:flex items-center px-4 py-2 bg-[#007628] text-white rounded-full hover:bg-[#756E33] transition-colors shadow-lg hover:shadow-xl font-kannada-regular"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               BUY MAIZE
-            </motion.button>
+            </motion.a>
 
             {/* Mobile Menu Toggle */}
             <button
