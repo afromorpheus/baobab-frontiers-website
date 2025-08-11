@@ -325,7 +325,7 @@ export default function LetsTalk() {
               <img 
                 src="/Logo Alternate Transparent-1.png"
                 alt="Baobab Frontiers Logo"
-                className="h-8 w-auto"
+                className="h-32 w-auto"
               />
             </div>
             
