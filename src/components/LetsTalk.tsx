@@ -102,14 +102,23 @@ export default function LetsTalk() {
         body: formDataToSend
       });
 
-      console.log('Formspree response:', response.status, response.ok);
-      console.log('Response headers:', response.headers);
+      console.log('Formspree response status:', response.status);
+      console.log('Response ok:', response.ok);
       
       const responseText = await response.text();
       console.log('Response text:', responseText);
 
-      // Formspree returns 200 for successful submissions
-      if (response.status === 200 || response.ok) {
+      // Formspree success criteria: status 200-299 OR response.ok is true
+      // Also check if response contains success indicators
+      const isSuccess = (response.status >= 200 && response.status < 300) || 
+                       response.ok || 
+                       responseText.includes('success') ||
+                       responseText.includes('Thank you') ||
+                       responseText.includes('submitted');
+
+      console.log('Is success?', isSuccess);
+
+      if (isSuccess) {
         setSubmitStatus('success');
         console.log('Form submitted successfully');
         setFormData({
