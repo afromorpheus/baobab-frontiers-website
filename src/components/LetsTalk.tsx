@@ -43,10 +43,76 @@ const contactMethods = [
 export default function LetsTalk() {
   // State for active contact method
   const [activeContactMethod, setActiveContactMethod] = useState(0);
+  
+  // Form state
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    contactNumber: '',
+    quantity: '',
+    unit: 'tonnes',
+    maizeType: '',
+    message: ''
+  });
+  
+  // Form submission state
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   // Handle contact method selection
   const handleContactMethodSelect = (index: number) => {
     setActiveContactMethod(index);
+  };
+
+  // Handle form input changes
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('https://formspree.io/f/mnnzlkdy', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          subject: `New Maize Enquiry from ${formData.name}`,
+          _replyto: formData.email
+        })
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          contactNumber: '',
+          quantity: '',
+          unit: 'tonnes',
+          maizeType: '',
+          message: ''
+        });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -180,12 +246,16 @@ export default function LetsTalk() {
               SOURCE MAIZE FROM US
             </h3>
             
-            <form className="space-y-2">
+            <form className="space-y-2" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 <div>
                   <label className="block text-sm font-nunito-light text-[#525252] mb-2">NAME</label>
                   <input 
                     type="text" 
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
                     className="w-full px-4 py-3 border border-[#D09229]/30 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#007628] focus:border-transparent font-nunito-light bg-white"
                     placeholder="Your name"
                   />
@@ -194,6 +264,10 @@ export default function LetsTalk() {
                   <label className="block text-sm font-nunito-light text-[#525252] mb-2">EMAIL</label>
                   <input 
                     type="email" 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
                     className="w-full px-4 py-3 border border-[#D09229]/30 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#007628] focus:border-transparent font-nunito-light bg-white"
                     placeholder="your@email.com"
                   />
@@ -204,6 +278,10 @@ export default function LetsTalk() {
                 <label className="block text-sm font-nunito-light text-[#525252] mb-2">COMPANY</label>
                 <input 
                   type="text" 
+                  name="company"
+                  value={formData.company}
+                  onChange={handleInputChange}
+                  required
                   className="w-full px-4 py-3 border border-[#D09229]/30 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#007628] focus:border-transparent font-nunito-light bg-white"
                   placeholder="Your company name"
                 />
@@ -213,7 +291,11 @@ export default function LetsTalk() {
                 <label className="block text-sm font-nunito-light text-[#525252] mb-2">CONTACT NUMBER</label>
                 <input 
                   type="tel" 
-                  className="w-full px-4 py-3 border border-[#D09229]/30 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#007628] focus:border-transparent font-nunito-light bg-white"
+                  name="contactNumber"
+                  value={formData.contactNumber}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 border border-[#D09229]/30 rounded-2xl focus:outline-none focus:ring-[#007628] focus:border-transparent font-nunito-light bg-white"
                   placeholder="Your phone number"
                 />
               </div>
@@ -223,6 +305,9 @@ export default function LetsTalk() {
                   <label className="block text-sm font-nunito-light text-[#525252] mb-2">QUANTITY</label>
                   <input 
                     type="number" 
+                    name="quantity"
+                    value={formData.quantity}
+                    onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-[#D09229]/30 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#007628] focus:border-transparent font-nunito-light bg-white"
                     placeholder="Enter quantity"
                   />
@@ -230,6 +315,9 @@ export default function LetsTalk() {
                 <div>
                   <label className="block text-sm font-nunito-light text-[#525252] mb-2">UNIT</label>
                   <select 
+                    name="unit"
+                    value={formData.unit}
+                    onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-[#D09229]/30 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#007628] focus:border-transparent font-nunito-light bg-white"
                   >
                     <option value="tonnes">Tonnes</option>
@@ -241,6 +329,9 @@ export default function LetsTalk() {
               <div>
                 <label className="block text-sm font-nunito-light text-[#525252] mb-2">MAIZE TYPE</label>
                 <select 
+                  name="maizeType"
+                  value={formData.maizeType}
+                  onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-[#D09229]/30 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#007628] focus:border-transparent font-nunito-light bg-white"
                 >
                   <option value="">Select maize type</option>
@@ -252,7 +343,10 @@ export default function LetsTalk() {
               <div>
                 <label className="block text-sm font-nunito-light text-[#525252] mb-2">MESSAGE</label>
                 <textarea 
+                  name="message"
                   rows={4}
+                  value={formData.message}
+                  onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-[#D09229]/30 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#007628] focus:border-transparent font-nunito-light resize-none bg-white"
                   placeholder="Tell us about your maize sourcing needs..."
                 ></textarea>
@@ -261,12 +355,24 @@ export default function LetsTalk() {
               <div className="flex justify-center">
                 <button 
                   type="submit"
+                  disabled={isSubmitting}
                   className="px-8 py-4 bg-[#F3EE33] text-[#222222] rounded-full hover:bg-[#D09229] transition-colors font-kannada-regular text-lg shadow-lg hover:shadow-xl"
                 >
-                  SEND MESSAGE
+                  {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
                 </button>
               </div>
             </form>
+
+            {submitStatus === 'success' && (
+              <div className="mt-4 text-center text-green-600 font-nunito-light">
+                Message sent successfully!
+              </div>
+            )}
+            {submitStatus === 'error' && (
+              <div className="mt-4 text-center text-red-600 font-nunito-light">
+                Failed to send message. Please try again later.
+              </div>
+            )}
           </div>
         </motion.div>
 
