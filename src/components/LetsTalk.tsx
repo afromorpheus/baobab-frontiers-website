@@ -325,7 +325,7 @@ export default function LetsTalk() {
               <img 
                 src="/Stand Alone Logo - Coloured.svg"
                 alt="Baobab Frontiers Logo"
-                className="h-32 w-auto"
+                className="h-8 w-auto"
               />
             </div>
             
