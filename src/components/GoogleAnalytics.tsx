@@ -10,7 +10,7 @@ declare global {
   }
 }
 
-const GA_TRACKING_ID = 'G-XXXXXXXXXX' // Replace with your actual GA4 tracking ID
+const GA_TRACKING_ID = 'G-KENF1H6GY2' // Your actual GA4 tracking ID
 
 export default function GoogleAnalytics() {
   const pathname = usePathname()
