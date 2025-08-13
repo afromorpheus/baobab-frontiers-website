@@ -1,4 +1,9 @@
-# This is a placeholder favicon.ico file
-# You'll need to convert your "Brand Motif Ahoɔden - Coloured.svg" to ICO format
-# Recommended sizes: 16x16, 32x32, 48x48 pixels
-# Use online converters like: https://favicon.io/favicon-converter/
+# FAVICON.ICO PLACEHOLDER
+# 
+# To fix the favicon issue:
+# 1. Go to https://favicon.io/favicon-converter/
+# 2. Upload your "Brand Motif Ahoɔden - Coloured.svg" file
+# 3. Download the generated favicon.ico
+# 4. Replace this file with the downloaded favicon.ico
+#
+# OR use the SVG favicon directly (already configured in layout.tsx)
