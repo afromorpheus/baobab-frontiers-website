@@ -1,0 +1,17 @@
+{
+  "name": "Baobab Frontiers",
+  "short_name": "Baobab",
+  "description": "Premium Maize Supply | All Year Round",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#007628",
+  "icons": [
+    {
+      "src": "/Brand%20Motif%20Aho%C9%94den%20-%20Coloured.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
